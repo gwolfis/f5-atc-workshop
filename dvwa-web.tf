@@ -20,6 +20,12 @@ resource "azurerm_network_interface" "dvwa-nic" {
   }
 }
 
+# Connect the security group to the network interface
+resource "azurerm_network_interface_security_group_association" "dvwa-nsg-int" {
+    network_interface_id      = azurerm_network_interface.dvwa-nic.id
+    network_security_group_id = azurerm_network_security_group.intnsg.id
+}
+
 # Onboard script the DVWA server
 locals {
   dvwa_custom_data = <<EOF
@@ -44,7 +50,7 @@ resource "azurerm_linux_virtual_machine" "dvwa-web" {
   custom_data                     = base64encode(local.dvwa_custom_data)
 
   os_disk {
-    name                 = "backendOsDisk"
+    name                 = "dvwaOsDisk"
     caching              = "ReadWrite"
     storage_account_type = "Premium_LRS"
   }

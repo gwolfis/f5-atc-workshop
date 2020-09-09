@@ -40,6 +40,17 @@ resource "azurerm_network_interface" "web02-nic" {
   }
 }
 
+# Connect the security group to the network interface
+resource "azurerm_network_interface_security_group_association" "web01-nsg-int" {
+    network_interface_id      = azurerm_network_interface.web01-nic.id
+    network_security_group_id = azurerm_network_security_group.intnsg.id
+}
+
+resource "azurerm_network_interface_security_group_association" "web02-nsg-int" {
+    network_interface_id      = azurerm_network_interface.web02-nic.id
+    network_security_group_id = azurerm_network_security_group.intnsg.id
+}
+
 # Onboard script the web01
 locals {
   web01_custom_data = <<EOF

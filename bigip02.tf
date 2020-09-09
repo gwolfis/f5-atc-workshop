@@ -111,7 +111,8 @@ resource "azurerm_network_interface" "bigip02-int-nic" {
     name        = "student${local.setup.azure.student_number}-bigip02-int-int"
     environment = local.setup.azure.environment
   }
-} 
+}
+ 
 # Connect the security group to the network interface
 resource "azurerm_network_interface_security_group_association" "bigip02-nsg-mgmt-int" {
     network_interface_id      = azurerm_network_interface.bigip02-mgmt-nic.id
