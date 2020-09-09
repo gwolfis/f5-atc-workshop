@@ -1,0 +1,76 @@
+---
+## Azure variables
+azure:
+  subscription_id: "<subscription_id>"
+  client_id      : "<client_id>"
+  client_secret  : "<client_secret>"
+  tenant_id      : "<tenant_id>"
+  student_number : "<student_number>"
+  environment    : "emea-workshop"
+  location       : "westeurope"
+
+# Network variables must be set per student
+# CIDR and Subnet IP addresses B octet needs to match the student_number
+# eg. student "1" uses the value of "1" in the B-octet of CIDR and Subnet 10."1".0.0/16 and 10."1".0.0/24, student 2 would use 10.2.0.0/16, etc
+# => Be aware that also to BIG-IP and Poolmember host IP addresses need to be adjusted accordingly.
+network:
+  cidr             : "10.<student_number>.0.0/16"
+  subnet-management: "10.<student_number>.0.0/24"
+  subnet-external  : "10.<student_number>.1.0/24"
+  subnet-internal  : "10.<student_number>.2.0/24"
+
+ 
+bigip:
+  user_name    : azureuser
+  user_password: F5emea2020!
+
+# Change the BIG-IP IP host addresses B-octet that it matches your student_number
+
+# BIGIP01
+  bigip01_mgmt   : "10.<student_number>.0.11"
+  bigip01_ext    : "10.<student_number>.1.11"
+  bigip01_int    : "10.<student_number>.2.11"
+
+# BIGIP02
+  bigip02_mgmt   : "10.<student_number>.0.12"
+  bigip02_ext    : "10.<student_number>.1.12"
+  bigip02_int    : "10.<student_number>.2.12"
+
+# Virtual Server
+  bigip_vip01    : "10.<student_number>.1.20"
+  bigip_vip02    : "10.<student_number>.1.30"
+
+# BIGIP specifics
+  publisher       : "f5-networks"
+  instance_type   : "Standard_DS4_v2"
+  bigip_product   : "f5-big-ip-best"
+  bigip_image_name: "f5-bigip-virtual-edition-25m-best-hourly"
+  bigip_version   : "15.1.004000"
+
+webserver:
+  user_name    : azureuser
+  user_password: F5emea2020!
+
+# Change the Webserver IP host address B-octet that it matches your student_number
+  web01_privip     : "10.<student_number>.2.31"
+  web02_privip     : "10.<student_number>.2.32"
+  service_discovery: "true"
+
+# DVWA web frontend
+dvwa:
+  dvwa_privip      : "10.<student_number>.2.35"
+
+  # F5 Automation Toolchain
+f5_atc:
+  DO_URL      : "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.14.0/f5-declarative-onboarding-1.14.0-1.noarch.rpm"
+  AS3_URL     : "https://github.com/F5Networks/f5-appsvcs-extension/releases/download/v3.21.0/f5-appsvcs-3.21.0-4.noarch.rpm"
+  TS_URL      : "https://github.com/F5Networks/f5-telemetry-streaming/releases/download/v1.13.0/f5-telemetry-1.13.0-2.noarch.rpm"
+  FAST_URL    : "https://github.com/F5Networks/f5-appsvcs-templates/releases/download/v1.2.0/f5-appsvcs-templates-1.2.0-1.noarch.rpm"
+  libs_dir    : "/config/cloud/azure/node_modules"
+  onboard_log : "/var/log/startup-script.log"
+
+postman:
+  json_file: F5_ATC_EMEA_Partner_Workshop_postman_environment.json
+
+
+
