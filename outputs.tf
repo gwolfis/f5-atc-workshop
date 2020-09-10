@@ -1,5 +1,5 @@
 # Azure environment
-output "azure_resource_group" { value = "${azurerm_resource_group.rg.name}"}
+output "azure_resource_group" { value = "${local.setup.azure.resource_group}"}
 
 #BIG-IP Management IP addres
 
@@ -40,6 +40,7 @@ output "dvwa_int_selfip_privip" { value = "${azurerm_network_interface.dvwa-nic.
 data "template_file" "postman_environment" {
   template = file ("${path.module}/postman_environment.json.tpl")
   vars = {
+    resource_group            = local.setup.azure.resource_group
     bigip_1_mgmt_privip       = azurerm_network_interface.bigip01-mgmt-nic.private_ip_address
     bigip_1_mgmt_pubip        = azurerm_public_ip.bigip01mgmtpip.ip_address
     bigip_2_mgmt_privip       = azurerm_network_interface.bigip02-mgmt-nic.private_ip_address
@@ -57,7 +58,6 @@ data "template_file" "postman_environment" {
     web_1_int_selfip_privip   = azurerm_network_interface.web01-nic.private_ip_address
     web_2_int_selfip_privip   = azurerm_network_interface.web02-nic.private_ip_address
     dvwa_int_selfip_privip    = azurerm_network_interface.dvwa-nic.private_ip_address
-    azure_resource_group      = azurerm_resource_group.rg.name
   }
 }
 resource "local_file" "postman_environment"{

@@ -21,23 +21,18 @@ provider "local" {
   version = "~> 1.4"
 }
 
-resource "azurerm_resource_group" "rg" {
-  name     = "student${local.setup.azure.student_number}-f5-atc-workshop"
-  location = local.setup.azure.location
-}
-
 resource "azurerm_log_analytics_workspace" "log" {
-  name                = "student${local.setup.azure.student_number}log"
+  name                = "student${local.setup.azure.student_number}f5atcworkshoplog"
   sku                 = "PerNode"
   retention_in_days   = 300
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.resource_group
+  location            = local.setup.azure.location
 }
 
 resource "azurerm_storage_account" "mystorage" {
   name                     = "student${local.setup.azure.student_number}storage"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  resource_group_name      = local.setup.azure.resource_group
+  location                 = local.setup.azure.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 

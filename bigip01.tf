@@ -4,7 +4,7 @@ resource "azurerm_public_ip" "bigip01mgmtpip" {
     location                     = local.setup.azure.location
     sku                          = "Standard"
     zones                        = [1]
-    resource_group_name          = azurerm_resource_group.rg.name
+    resource_group_name          = local.setup.azure.resource_group
     allocation_method            = "Static"
 
     tags = {
@@ -18,7 +18,7 @@ resource "azurerm_public_ip" "bigip01selfextpip" {
     location                     = local.setup.azure.location
     sku                          = "Standard"
     zones                        = [1]
-    resource_group_name          = azurerm_resource_group.rg.name
+    resource_group_name          = local.setup.azure.resource_group
     allocation_method            = "Static"
 
     tags = {
@@ -29,10 +29,10 @@ resource "azurerm_public_ip" "bigip01selfextpip" {
 
 resource "azurerm_public_ip" "bigip01-pubvippip" {
   name                = "student${local.setup.azure.student_number}-bigip01-pubvip-pip"
-  location            = azurerm_resource_group.rg.location
+  location            = local.setup.azure.location
   sku                 = "Standard"
   zones               = [1]
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = local.setup.azure.resource_group
   allocation_method   = "Static"
 
   tags = {
@@ -45,8 +45,8 @@ resource "azurerm_public_ip" "bigip01-pubvippip" {
 # Create NIC for Management 
 resource "azurerm_network_interface" "bigip01-mgmt-nic" {
   name                = "student${local.setup.azure.student_number}-bigip01-mgmt0"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = local.setup.azure.location
+  resource_group_name = local.setup.azure.resource_group
 
   ip_configuration {
     name                          = "primary"
@@ -65,8 +65,8 @@ resource "azurerm_network_interface" "bigip01-mgmt-nic" {
 # Create external NIC
 resource "azurerm_network_interface" "bigip01-ext-nic" {
   name                 = "student${local.setup.azure.student_number}-bigip01-ext0"
-  location             = azurerm_resource_group.rg.location
-  resource_group_name  = azurerm_resource_group.rg.name
+  location             = local.setup.azure.location
+  resource_group_name  = local.setup.azure.resource_group
   enable_ip_forwarding = true 
 
   ip_configuration {
@@ -95,8 +95,8 @@ resource "azurerm_network_interface" "bigip01-ext-nic" {
 # Create internal NIC
 resource "azurerm_network_interface" "bigip01-int-nic" {
   name                 = "student${local.setup.azure.student_number}-bigip01-int0"
-  location             = azurerm_resource_group.rg.location
-  resource_group_name  = azurerm_resource_group.rg.name
+  location             = local.setup.azure.location
+  resource_group_name  = local.setup.azure.resource_group
   enable_ip_forwarding = true
 
   ip_configuration {
@@ -147,8 +147,8 @@ data "template_file" "bigip01_onboard" {
 # Create BIG-IP VM
 resource "azurerm_linux_virtual_machine" "bigip01" {
   name                            = "student${local.setup.azure.student_number}-bigip01"
-  location                        = azurerm_resource_group.rg.location
-  resource_group_name             = azurerm_resource_group.rg.name
+  location                        = local.setup.azure.location
+  resource_group_name             = local.setup.azure.resource_group
   network_interface_ids           = [azurerm_network_interface.bigip01-mgmt-nic.id, azurerm_network_interface.bigip01-ext-nic.id, azurerm_network_interface.bigip01-int-nic.id]
   zone                            = 1
   size                            = local.setup.bigip.instance_type

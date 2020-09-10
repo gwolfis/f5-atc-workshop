@@ -3,8 +3,8 @@
 # Create NSG Management
 resource "azurerm_network_security_group" "mgmtnsg" {
   name                = "student${local.setup.azure.student_number}-mgmtnsg"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = local.setup.azure.location
+  resource_group_name = local.setup.azure.resource_group
 
   security_rule {
     name                       = "allow_SSH"
@@ -41,8 +41,8 @@ resource "azurerm_network_security_group" "mgmtnsg" {
 # Create NSG External
 resource "azurerm_network_security_group" "extnsg" {
   name                = "student${local.setup.azure.student_number}-extnsg"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = local.setup.azure.location
+  resource_group_name = local.setup.azure.resource_group
 
   security_rule {
     name                       = "allow_HTTP"
@@ -92,8 +92,8 @@ resource "azurerm_network_security_group" "extnsg" {
 # Create NSG Internal
 resource "azurerm_network_security_group" "intnsg" {
   name                = "student${local.setup.azure.student_number}-intnsg"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = local.setup.azure.location
+  resource_group_name = local.setup.azure.resource_group
 
   security_rule {
     name                       = "allow_ALL"

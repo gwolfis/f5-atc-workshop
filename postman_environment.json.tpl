@@ -98,8 +98,8 @@
 			"enabled": true
 		},
 		{
-			"key": "azure_resource_group",
-			"value": "${azure_resource_group}",
+			"key": "resource_group",
+			"value": "${resource_group}",
 			"enabled": true
 		}
 	],

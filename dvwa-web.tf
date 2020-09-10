@@ -3,8 +3,8 @@
 # Create DVWA NIC
 resource "azurerm_network_interface" "dvwa-nic" {
   name                = "student${local.setup.azure.student_number}-dvwa-nic"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = local.setup.azure.location
+  resource_group_name = local.setup.azure.resource_group 
 
   ip_configuration {
     name                          = "primary"
@@ -39,8 +39,8 @@ EOF
 # Create VM
 resource "azurerm_linux_virtual_machine" "dvwa-web" {
   name                            = "student${local.setup.azure.student_number}-dvwa-web"
-  location                        = azurerm_resource_group.rg.location
-  resource_group_name             = azurerm_resource_group.rg.name
+  location                        = local.setup.azure.location
+  resource_group_name             = local.setup.azure.resource_group
   network_interface_ids           = [azurerm_network_interface.dvwa-nic.id]
   size                            = "Standard_B1ms"
   admin_username                  = local.setup.webserver.user_name

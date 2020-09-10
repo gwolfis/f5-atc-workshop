@@ -4,7 +4,7 @@ resource "azurerm_public_ip" "bigip02mgmtpip" {
     location                     = local.setup.azure.location
     sku                          = "Standard"
     zones                        = [2]
-    resource_group_name          = azurerm_resource_group.rg.name
+    resource_group_name          = local.setup.azure.resource_group
     allocation_method            = "Static"
 
     tags = {
@@ -18,7 +18,7 @@ resource "azurerm_public_ip" "bigip02selfextpip" {
     location                     = local.setup.azure.location
     sku                          = "Standard"
     zones                        = [2]
-    resource_group_name          = azurerm_resource_group.rg.name
+    resource_group_name          = local.setup.azure.resource_group
     allocation_method            = "Static"
 
     tags = {
@@ -29,10 +29,10 @@ resource "azurerm_public_ip" "bigip02selfextpip" {
 
 resource "azurerm_public_ip" "bigip02-pubvippip" {
   name                = "student${local.setup.azure.student_number}-bigip02-pubvip-pip"
-  location            = azurerm_resource_group.rg.location
+  location            = local.setup.azure.location
   sku                 = "Standard"
   zones               = [2]
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = local.setup.azure.resource_group
   allocation_method   = "Static"
 
   tags = {
@@ -45,8 +45,8 @@ resource "azurerm_public_ip" "bigip02-pubvippip" {
 # Create NIC for Management 
 resource "azurerm_network_interface" "bigip02-mgmt-nic" {
   name                = "student${local.setup.azure.student_number}-bigip02-mgmt0"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = local.setup.azure.location
+  resource_group_name = local.setup.azure.resource_group
 
   ip_configuration {
     name                          = "primary"
@@ -65,8 +65,8 @@ resource "azurerm_network_interface" "bigip02-mgmt-nic" {
 # Create external NIC
 resource "azurerm_network_interface" "bigip02-ext-nic" {
   name                 = "student${local.setup.azure.student_number}-bigip02-ext0"
-  location             = azurerm_resource_group.rg.location
-  resource_group_name  = azurerm_resource_group.rg.name
+  location             = local.setup.azure.location
+  resource_group_name  = local.setup.azure.resource_group
   enable_ip_forwarding = true 
 
   ip_configuration {
@@ -95,8 +95,8 @@ resource "azurerm_network_interface" "bigip02-ext-nic" {
 # Create internal NIC
 resource "azurerm_network_interface" "bigip02-int-nic" {
   name                 = "student${local.setup.azure.student_number}-bigip02-int0"
-  location             = azurerm_resource_group.rg.location
-  resource_group_name  = azurerm_resource_group.rg.name
+  location             = local.setup.azure.location
+  resource_group_name  = local.setup.azure.resource_group
   enable_ip_forwarding = true
 
   ip_configuration {
@@ -112,7 +112,7 @@ resource "azurerm_network_interface" "bigip02-int-nic" {
     environment = local.setup.azure.environment
   }
 }
- 
+
 # Connect the security group to the network interface
 resource "azurerm_network_interface_security_group_association" "bigip02-nsg-mgmt-int" {
     network_interface_id      = azurerm_network_interface.bigip02-mgmt-nic.id
@@ -148,8 +148,8 @@ data "template_file" "bigip02_onboard" {
 # Create BIG-IP VM
 resource "azurerm_linux_virtual_machine" "bigip02" {
   name                            = "student${local.setup.azure.student_number}-bigip02"
-  location                        = azurerm_resource_group.rg.location
-  resource_group_name             = azurerm_resource_group.rg.name
+  location                        = local.setup.azure.location
+  resource_group_name             = local.setup.azure.resource_group
   network_interface_ids           = [azurerm_network_interface.bigip02-mgmt-nic.id, azurerm_network_interface.bigip02-ext-nic.id, azurerm_network_interface.bigip02-int-nic.id]
   zone                            = 2
   size                            = local.setup.bigip.instance_type
