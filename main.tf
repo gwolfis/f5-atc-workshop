@@ -30,7 +30,7 @@ resource "azurerm_log_analytics_workspace" "log" {
 }
 
 resource "azurerm_storage_account" "mystorage" {
-  name                     = "student${local.setup.azure.student_number}storage"
+  name                     = "student${local.setup.azure.student_number}f5atcworkshopstorage"
   resource_group_name      = local.setup.azure.resource_group
   location                 = local.setup.azure.location
   account_tier             = "Standard"
