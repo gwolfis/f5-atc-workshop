@@ -1385,7 +1385,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"class\": \"Telemetry\",\r\n\t\"controls\": {\r\n\t\t\"class\": \"Controls\",\r\n\t\t\"logLevel\": \"debug\",\r\n\t\t\"debug\": true\r\n\t},\r\n\t\"My_System\": {\r\n\t\t\"class\": \"Telemetry_System\",\r\n\t\t\"systemPoller\": {\r\n\t\t\t\"interval\": 60\r\n\t\t}\r\n\t},\r\n\t\"My_Listener\": {\r\n\t\t\"class\": \"Telemetry_Listener\",\r\n\t\t\"port\": 6514\r\n\t},\r\n\t\"My_Consumer\": {\r\n\t\t\"class\": \"Telemetry_Consumer\",\r\n\t\t\"type\": \"Azure_Log_Analytics\",\r\n\t\t\"workspaceId\": \"dac01ffa-8b3f-45de-b4bc-1f7754c6f29d\",\r\n\t\t\"passphrase\": {\r\n\t\t\t\"cipherText\": \"7MGrh8oDTOkza/k00ZUZithLuZYzzelCKGkISi0lKQP4iAyZOUCRtXuGciifMPcptudB3i9pjwpL8miBi6dqBA==\"\r\n\t\t},\r\n\t\t\"useManagedIdentity\": false,\r\n\t\t\"region\": \"westeurope\"\r\n\t}\r\n}"
+							"raw": "{\r\n\t\"class\": \"Telemetry\",\r\n\t\"controls\": {\r\n\t\t\"class\": \"Controls\",\r\n\t\t\"logLevel\": \"debug\",\r\n\t\t\"debug\": true\r\n\t},\r\n\t\"My_System\": {\r\n\t\t\"class\": \"Telemetry_System\",\r\n\t\t\"systemPoller\": {\r\n\t\t\t\"interval\": 60\r\n\t\t}\r\n\t},\r\n\t\"My_Listener\": {\r\n\t\t\"class\": \"Telemetry_Listener\",\r\n\t\t\"port\": 6514\r\n\t},\r\n\t\"My_Consumer\": {\r\n\t\t\"class\": \"Telemetry_Consumer\",\r\n\t\t\"type\": \"Azure_Log_Analytics\",\r\n\t\t\"workspaceId\": \"<workspaceId>\",\r\n\t\t\"passphrase\": {\r\n\t\t\t\"cipherText\": \"<passphrase>\"\r\n\t\t},\r\n\t\t\"useManagedIdentity\": false,\r\n\t\t\"region\": \"westeurope\"\r\n\t}\r\n}"
 						},
 						"url": {
 							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/telemetry/declare",
