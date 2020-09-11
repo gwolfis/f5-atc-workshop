@@ -12,9 +12,10 @@ azure:
 # => Be aware that also to BIG-IP and Poolmember host IP addresses need to be adjusted accordingly.
 network:
   cidr             : "10.<student_number>.0.0/16"
-  subnet-management: "10.<student_number>.0.0/24"
-  subnet-external  : "10.<student_number>.1.0/24"
-  subnet-internal  : "10.<student_number>.2.0/24"
+  subnet_management: "10.<student_number>.0.0/24"
+  subnet_external  : "10.<student_number>.1.0/24"
+  subnet_internal  : "10.<student_number>.2.0/24"
+  default_gateway  : "10.<student_number>.1.1"
 
  
 bigip:
