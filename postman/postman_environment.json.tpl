@@ -18,8 +18,8 @@
 			"enabled": true
 		},
 		{
-			"key": "bigip_1_mgmt_pubip",
-			"value": "${bigip_1_mgmt_pubip}",
+			"key": "bigip_1",
+			"value": "${bigip_1}",
 			"enabled": true
 		},
 		{
@@ -33,8 +33,8 @@
 			"enabled": true
 		},
 		{
-			"key": "bigip_2_mgmt_pubip",
-			"value": "${bigip_2_mgmt_pubip}",
+			"key": "bigip_2",
+			"value": "${bigip_2}",
 			"enabled": true
 		},
 		{

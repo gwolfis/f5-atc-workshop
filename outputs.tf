@@ -44,9 +44,9 @@ data "template_file" "postman_environment" {
     bigip_username            = local.setup.bigip.user_name
     bigip_password            = local.setup.bigip.user_password
     bigip_1_mgmt_privip       = azurerm_network_interface.bigip01-mgmt-nic.private_ip_address
-    bigip_1_mgmt_pubip        = azurerm_public_ip.bigip01mgmtpip.ip_address
+    bigip_1_mgmt              = azurerm_public_ip.bigip01mgmtpip.ip_address
     bigip_2_mgmt_privip       = azurerm_network_interface.bigip02-mgmt-nic.private_ip_address
-    bigip_2_mgmt_pubip        = azurerm_public_ip.bigip02mgmtpip.ip_address
+    bigip_2_mgmt              = azurerm_public_ip.bigip02mgmtpip.ip_address
     bigip_1_ext_selfip_privip = azurerm_network_interface.bigip01-ext-nic.private_ip_address
     bigip_1_ext_selfip_pubip  = azurerm_public_ip.bigip01selfextpip.ip_address
     bigip_1_int_selfip_privip = azurerm_network_interface.bigip01-int-nic.private_ip_address
