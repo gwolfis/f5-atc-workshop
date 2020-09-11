@@ -99,18 +99,18 @@
 			"enabled": true
 		},
 		{
-			"key": "web_1_int_selfip_privip",
-			"value": "${web_1_int_selfip_privip}",
+			"key": "webserver_1",
+			"value": "${webserver_1}",
 			"enabled": true
 		},
 		{
-			"key": "web_2_int_selfip_privip",
-			"value": "${web_2_int_selfip_privip}",
+			"key": "webserver_2",
+			"value": "${webserver_2}",
 			"enabled": true
 		},
 		{
-			"key": "dvwa_int_selfip_privip",
-			"value": "${dvwa_int_selfip_privip}",
+			"key": "dvwa_server",
+			"value": "${dvwa_server}",
 			"enabled": true
 		},
 		{

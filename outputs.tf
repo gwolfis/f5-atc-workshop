@@ -28,8 +28,8 @@ output "bigip_1_int_selfip_privip" { value = "${azurerm_network_interface.bigip0
 output "bigip_2_int_selfip_privip" { value = "${azurerm_network_interface.bigip02-int-nic.private_ip_address}" }
 
 # Web Server internal IP Addresses
-output "web_1_int_selfip_privip" { value = "${azurerm_network_interface.web01-nic.private_ip_address}" }
-output "web_2_int_selfip_privip" { value = "${azurerm_network_interface.web02-nic.private_ip_address}" }
+output "web_1_int_selfip_privip1" { value = "${azurerm_network_interface.web01-nic.private_ip_address}" }
+output "web_2_int_selfip_privip2" { value = "${azurerm_network_interface.web02-nic.private_ip_address}" }
 
 # DVWA web frontend
 output "dvwa_int_selfip_privip" { value = "${azurerm_network_interface.dvwa-nic.private_ip_address}"}
@@ -38,17 +38,17 @@ output "dvwa_int_selfip_privip" { value = "${azurerm_network_interface.dvwa-nic.
 # Write output to file
 #
 data "template_file" "postman_environment" {
-  template = file ("${path.module}/postman_environment.json.tpl")
+  template = file ("${path.module}/postman/postman_environment.json.tpl")
   vars = {
     resource_group            = local.setup.azure.resource_group
     bigip_username            = local.setup.bigip.user_name
     bigip_password            = local.setup.bigip.user_password
     bigip_1_mgmt_privip       = azurerm_network_interface.bigip01-mgmt-nic.private_ip_address
-    bigip_1_mgmt              = azurerm_public_ip.bigip01mgmtpip.ip_address
+    bigip_1_mgmt_pubip        = azurerm_public_ip.bigip01mgmtpip.ip_address
     bigip_2_mgmt_privip       = azurerm_network_interface.bigip02-mgmt-nic.private_ip_address
-    bigip_2_mgmt              = azurerm_public_ip.bigip02mgmtpip.ip_address
+    bigip_2_mgmt_pubip        = azurerm_public_ip.bigip02mgmtpip.ip_address
     bigip_1_ext_selfip_privip = azurerm_network_interface.bigip01-ext-nic.private_ip_address
-    bigip_1_ext_selfip_pubip  = azurerm_public_ip.bigip01selfextpip.ip_addressi
+    bigip_1_ext_selfip_pubip  = azurerm_public_ip.bigip01selfextpip.ip_address
     bigip_1_int_selfip_privip = azurerm_network_interface.bigip01-int-nic.private_ip_address
     bigip_2_ext_selfip_privip = azurerm_network_interface.bigip02-ext-nic.private_ip_address
     bigip_2_ext_selfip_pubip  = azurerm_public_ip.bigip02selfextpip.ip_address
@@ -58,9 +58,9 @@ data "template_file" "postman_environment" {
     bigip_ext_pub_vippip2     = azurerm_public_ip.bigip02-pubvippip.ip_address
     bigip_ext_priv_vippip2    = local.setup.bigip.bigip_vip02
     default_gateway           = local.setup.network.default_gateway
-    web_1_int_selfip_privip   = azurerm_network_interface.web01-nic.private_ip_address
-    web_2_int_selfip_privip   = azurerm_network_interface.web02-nic.private_ip_address
-    dvwa_int_selfip_privip    = azurerm_network_interface.dvwa-nic.private_ip_address
+    webserver_1               = azurerm_network_interface.web01-nic.private_ip_address
+    webserver_2               = azurerm_network_interface.web02-nic.private_ip_address
+    dvwa_server               = azurerm_network_interface.dvwa-nic.private_ip_address
     subscription_id           = local.tmp.subscription_id
     client_id                 = local.tmp.client_id
     client_secret             = local.tmp.client_secret
