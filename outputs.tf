@@ -58,6 +58,10 @@ data "template_file" "postman_environment" {
     web_1_int_selfip_privip   = azurerm_network_interface.web01-nic.private_ip_address
     web_2_int_selfip_privip   = azurerm_network_interface.web02-nic.private_ip_address
     dvwa_int_selfip_privip    = azurerm_network_interface.dvwa-nic.private_ip_address
+    subscription_id           = local.tmp.subscription_id
+    client_id                 = local.tmp.client_id
+    client_secret             = local.tmp.client_secret
+    tenant_id                 = local.tmp.tenant_id
   }
 }
 resource "local_file" "postman_environment"{

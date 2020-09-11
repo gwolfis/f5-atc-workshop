@@ -4,3 +4,10 @@ variable "setupfile" {
   type        = string
   default     = "setup.yml"
 }
+
+# Tmp file
+variable "tmpfile" {
+  description = "The tmp file in yaml format"
+  type        = string
+  default     = "../file/tmp.yml"
+}

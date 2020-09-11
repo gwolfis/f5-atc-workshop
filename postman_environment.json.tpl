@@ -101,6 +101,26 @@
 			"key": "resource_group",
 			"value": "${resource_group}",
 			"enabled": true
+		},
+		{
+			"key": "subscription_id",
+			"value": "${subscription_id}",
+			"enabled": true
+		},
+		{
+			"key": "client_id",
+			"value": "${client_id}",
+			"enabled": true
+		},
+		{
+			"key": "client_secret",
+			"value": "${client_secret}",
+			"enabled": true
+		},
+		{
+			"key": "tenant_id",
+			"value": "${tenant_id}",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",

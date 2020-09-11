@@ -7,14 +7,15 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = local.setup.azure.subscription_id
-  client_id       = local.setup.azure.client_id
-  client_secret   = local.setup.azure.client_secret
-  tenant_id       = local.setup.azure.tenant_id
+  subscription_id = local.tmp.subscription_id
+  client_id       = local.tmp.client_id
+  client_secret   = local.tmp.client_secret
+  tenant_id       = local.tmp.tenant_id
 }
 
 locals {
   setup = yamldecode(file(var.setupfile))
+  creds = yamldecode(file(var.tmpfile))
 }
 
 provider "local" {
