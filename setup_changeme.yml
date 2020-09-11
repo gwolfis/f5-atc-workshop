@@ -68,7 +68,7 @@ f5_atc:
   onboard_log : "/var/log/startup-script.log"
 
 postman:
-  json_file: F5_ATC_EMEA_Partner_Workshop_postman_environment.json
+  json_file: "postman/F5_ATC_EMEA_Partner_Workshop_postman_environment.json"
 
 
 
