@@ -41,6 +41,8 @@ data "template_file" "postman_environment" {
   template = file ("${path.module}/postman_environment.json.tpl")
   vars = {
     resource_group            = local.setup.azure.resource_group
+    bigip_username            = local.setup.bigip.user_name
+    bigip_password            = local.setup.bigip.user_password
     bigip_1_mgmt_privip       = azurerm_network_interface.bigip01-mgmt-nic.private_ip_address
     bigip_1_mgmt_pubip        = azurerm_public_ip.bigip01mgmtpip.ip_address
     bigip_2_mgmt_privip       = azurerm_network_interface.bigip02-mgmt-nic.private_ip_address

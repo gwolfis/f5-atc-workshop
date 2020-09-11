@@ -3,6 +3,16 @@
 	"name": "F5 ATC - EMEA Partner Workshop",
 	"values": [
 		{
+			"key": "bigip_username",
+			"value": "${bigip_username}",
+			"enabled": true
+		},
+		{
+			"key": "bigip_password",
+			"value": "${bigip_password}",
+			"enabled": true
+		},
+		{
 			"key": "bigip_1_mgmt_privip",
 			"value": "${bigip_1_mgmt_privip}",
 			"enabled": true
