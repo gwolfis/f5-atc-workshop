@@ -38,7 +38,7 @@
 			"enabled": true
 		},
 		{
-			"key": "bigip_1_auth_token",
+			"key": "bigip_2_auth_token",
 			"value": "",
 			"enabled": true
 		},
@@ -53,13 +53,24 @@
 			"enabled": true
 		},
 		{
-			"key": "bigip_1_ext_selfip_pubip",
-			"value": "${bigip_2_ext_selfip_privip}",
+			"key": "bigip_1_int_selfip_privip",
+			"value": "${bigip_1_int_selfip_privip}",
 			"enabled": true
 		},
 		{
+			"key": "bigip_2_ext_selfip_privip",
+			"value": "${bigip_2_ext_selfip_privip}",
+			"enabled": true
+		},
+		
+		{
 			"key": "bigip_2_ext_selfip_pubip",
 			"value": "${bigip_2_ext_selfip_pubip}",
+			"enabled": true
+		},
+		{
+			"key": "bigip_2_int_selfip_privip",
+			"value": "${bigip_2_int_selfip_privip}",
 			"enabled": true
 		},
 		{
@@ -83,13 +94,8 @@
 			"enabled": true
 		},
 		{
-			"key": "bigip_1_int_selfip_privip",
-			"value": "${bigip_1_int_selfip_privip}",
-			"enabled": true
-		},
-		{
-			"key": "bigip_2_int_selfip_privip",
-			"value": "${bigip_2_int_selfip_privip}",
+			"key": "default_gateway",
+			"value": "${default_gateway}",
 			"enabled": true
 		},
 		{

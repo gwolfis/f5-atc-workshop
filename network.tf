@@ -13,7 +13,7 @@ resource "azurerm_subnet" "management" {
   name                 = "managememt"
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name  = local.setup.azure.resource_group
-  address_prefix       = local.setup.network["subnet-management"]
+  address_prefix       = local.setup.network["subnet_management"]
 }
 
 # Create External subnet
@@ -21,7 +21,7 @@ resource "azurerm_subnet" "external" {
   name                 = "external"
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name  = local.setup.azure.resource_group
-  address_prefix       = local.setup.network["subnet-external"]
+  address_prefix       = local.setup.network["subnet_external"]
 }
 
 # Create Internal Subnet
@@ -29,5 +29,5 @@ resource "azurerm_subnet" "internal" {
   name                 = "internal"
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name  = local.setup.azure.resource_group
-  address_prefix       = local.setup.network["subnet-internal"]
+  address_prefix       = local.setup.network["subnet_internal"]
 }
