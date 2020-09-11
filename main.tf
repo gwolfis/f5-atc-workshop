@@ -15,7 +15,7 @@ provider "azurerm" {
 
 locals {
   setup = yamldecode(file(var.setupfile))
-  creds = yamldecode(file(var.tmpfile))
+  tmp = yamldecode(file(var.tmpfile))
 }
 
 provider "local" {
