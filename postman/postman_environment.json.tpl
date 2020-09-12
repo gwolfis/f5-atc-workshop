@@ -18,27 +18,12 @@
 			"enabled": true
 		},
 		{
-			"key": "bigip_1",
-			"value": "${bigip_1}",
+			"key": "bigip_1_mgmt",
+			"value": "${bigip_1_mgmt}",
 			"enabled": true
 		},
 		{
 			"key": "bigip_1_auth_token",
-			"value": "",
-			"enabled": true
-		},
-		{
-			"key": "bigip_2_mgmt_privip",
-			"value": "${bigip_2_mgmt_privip}",
-			"enabled": true
-		},
-		{
-			"key": "bigip_2",
-			"value": "${bigip_2}",
-			"enabled": true
-		},
-		{
-			"key": "bigip_2_auth_token",
 			"value": "",
 			"enabled": true
 		},
@@ -55,6 +40,21 @@
 		{
 			"key": "bigip_1_int_selfip_privip",
 			"value": "${bigip_1_int_selfip_privip}",
+			"enabled": true
+		},
+		{
+			"key": "bigip_2_mgmt_privip",
+			"value": "${bigip_2_mgmt_privip}",
+			"enabled": true
+		},
+		{
+			"key": "bigip_2_mgmt",
+			"value": "${bigip_2_mgmt}",
+			"enabled": true
+		},
+		{
+			"key": "bigip_2_auth_token",
+			"value": "",
 			"enabled": true
 		},
 		{

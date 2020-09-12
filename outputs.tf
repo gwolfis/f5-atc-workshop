@@ -3,10 +3,10 @@ output "azure_resource_group" { value = "${local.setup.azure.resource_group}"}
 
 #BIG-IP Management IP addres
 
-output "bigip_1_mgmt_privip" { value = "${azurerm_network_interface.bigip01-mgmt-nic.private_ip_address}" }
+#output "bigip_1_mgmt_privip" { value = "${azurerm_network_interface.bigip01-mgmt-nic.private_ip_address}" }
 output "bigip_1_mgmt_pubip"  { value = "${azurerm_public_ip.bigip01mgmtpip.ip_address}" }
 
-output "bigip_2_mgmt_privip" { value = "${azurerm_network_interface.bigip02-mgmt-nic.private_ip_address}" }
+#output "bigip_2_mgmt_privip" { value = "${azurerm_network_interface.bigip02-mgmt-nic.private_ip_address}" }
 output "bigip_2_mgmt_pubip"  { value = "${azurerm_public_ip.bigip02mgmtpip.ip_address}" }
 
 # BIG-IP external IP Addresses
