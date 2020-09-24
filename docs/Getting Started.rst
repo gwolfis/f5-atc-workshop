@@ -26,14 +26,16 @@ During the workshop which uses UDF, this is done for you. Once getting invited t
 ****************************
 Starting the lab without UDF
 ****************************
-When you don't have access to UDF, please follow the mentioned per-requisites:
- * Azure account
- * configure a resource group
- * define a location
+When you don't have access to UDF, please align to the mentioned per-requisites:
+ * Having an Azure account.
+ * Pre-configure a resource group.
+ * Define a location within your resource group.
 
 In the setup_changeme.yml the resource group and location are hardcoded and should be adjusted accordingly.
 
-<picture>
+.. figure:: png/getting_started/network_diagram.png
+      :align: center
 
-<creds tab picture>
+.. figure:: png/getting_started/workshop_overview_table.png
+      :align: center
 

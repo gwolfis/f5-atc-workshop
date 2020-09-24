@@ -3,3 +3,4 @@ setup.yml
 /postman/F5_ATC_EMEA_Partner_Workshop_postman_environment.json
 terraform.tfstate
 terraform.tfstate.backup
+conf.py
