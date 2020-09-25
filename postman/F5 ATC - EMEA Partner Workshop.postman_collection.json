@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "1. Setup auth token BIGIP-01",
+			"name": "1. Setup auth token",
 			"item": [
 				{
 					"name": "Step 1: Retrieve Authentication Token BIGIP1",
@@ -392,7 +392,56 @@
 					"response": []
 				},
 				{
-					"name": "Step 2.3: Deploy Declarative Onboarding BIGIP-2",
+					"name": "Step 2.3: GET DO task BIGIP-01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a61c4868-ab5c-438c-a424-dd7d671acd63",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/declarative-onboarding/task",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"declarative-onboarding",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 2.4: Deploy Declarative Onboarding BIGIP-2",
 					"event": [
 						{
 							"listen": "test",
@@ -431,55 +480,6 @@
 								"mgmt",
 								"shared",
 								"declarative-onboarding"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Step 2.4: GET DO task BIGIP-01",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a61c4868-ab5c-438c-a424-dd7d671acd63",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-F5-Auth-Token",
-								"value": "{{bigip_a_auth_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{bigip_a_mgmt}}/mgmt/shared/declarative-onboarding/task",
-							"protocol": "https",
-							"host": [
-								"{{bigip_a_mgmt}}"
-							],
-							"path": [
-								"mgmt",
-								"shared",
-								"declarative-onboarding",
-								"task"
 							]
 						}
 					},
@@ -541,7 +541,7 @@
 			"name": "3. AS3 Declarations",
 			"item": [
 				{
-					"name": "Step 3.0: Deploy AS3 info",
+					"name": "Step 3.0: GET AS3 info",
 					"event": [
 						{
 							"listen": "test",
@@ -859,53 +859,7 @@
 					"response": []
 				},
 				{
-					"name": "Step 3.3: Deploy serviceMain and service Generic with shared poolmembers",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "c009fde7-3d87-4cc5-9d13-6978036b614d",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-F5-Auth-Token",
-								"value": "{{bigip_1_auth_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"class\": \"AS3\",\r\n\t\"persist\": false,\r\n\t\"declaration\": {\r\n\t\t\"class\": \"ADC\",\r\n\t\t\"schemaVersion\": \"3.20.0\",\r\n\t\t\"id\": \"serviceMain-and-generic\",\r\n\t\t\"shared_tenant\": {\r\n\t\t\t\"class\": \"Tenant\",\r\n\t\t\t\"my_generic_app\": {\r\n\t\t\t\t\"class\": \"Application\",\r\n\t\t\t\t\"myApp\": {\r\n\t\t\t\t\t\"class\": \"Service_Generic\",\r\n\t\t\t\t\t\"virtualAddresses\": [\r\n\t\t\t\t\t\t\"{{bigip_ext_priv_vippip1}}\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"virtualPort\": 8080,\r\n\t\t\t\t\t\"shareAddresses\": false,\r\n\t\t\t\t\t\"pool\": \"web-pool8080\"\r\n\t\t\t\t},\r\n\t\t\t\t\"web-pool8080\": {\r\n\t\t\t\t\t\"class\": \"Pool\",\r\n\t\t\t\t\t\"monitors\": [\r\n\t\t\t\t\t\t\"http\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"members\": [{\r\n\t\t\t\t\t\t\"servicePort\": 80,\r\n\t\t\t\t\t\t\"serverAddresses\": [\r\n\t\t\t\t\t\t\t\"{{webserver_1}}\",\r\n\t\t\t\t\t\t\t\"{{webserver_2}}\"\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"HTTPS_Service\": {\r\n\t\t\t\t\"class\": \"Application\",\r\n\t\t\t\t\"template\": \"https\",\r\n\t\t\t\t\"serviceMain\": {\r\n\t\t\t\t\t\"class\": \"Service_HTTPS\",\r\n\t\t\t\t\t\"virtualAddresses\": [\r\n\t\t\t\t\t\t\"{{bigip_ext_priv_vippip1}}\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"shareAddresses\": false,\r\n\t\t\t\t\t\"snat\": \"auto\",\r\n\t\t\t\t\t\"pool\": \"web-pool\",\r\n\t\t\t\t\t\"profileHTTP\": \"basic\",\r\n\t\t\t\t\t\"serverTLS\": \"webtls\"\r\n\t\t\t\t},\r\n\t\t\t\t\"web-pool\": {\r\n\t\t\t\t\t\"class\": \"Pool\",\r\n\t\t\t\t\t\"monitors\": [\r\n\t\t\t\t\t\t\"http\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"members\": [{\r\n\t\t\t\t\t\t\"servicePort\": 80,\r\n\t\t\t\t\t\t\"serverAddresses\": [\r\n\t\t\t\t\t\t\t\"{{webserver_2}}\"\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}]\r\n\t\t\t\t},\r\n\t\t\t\t\"webtls\": {\r\n\t\t\t\t\t\"class\": \"TLS_Server\",\r\n\t\t\t\t\t\"certificates\": [{\r\n\t\t\t\t\t\t\"certificate\": \"webcert\"\r\n\t\t\t\t\t}]\r\n\t\t\t\t},\r\n\t\t\t\t\"webcert\": {\r\n\t\t\t\t\t\"class\": \"Certificate\",\r\n\t\t\t\t\t\"certificate\": {\r\n\t\t\t\t\t\t\"bigip\": \"/Common/default.crt\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"privateKey\": {\r\n\t\t\t\t\t\t\"bigip\": \"/Common/default.key\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
-						},
-						"url": {
-							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/appsvcs/declare",
-							"protocol": "https",
-							"host": [
-								"{{bigip_1_mgmt}}"
-							],
-							"path": [
-								"mgmt",
-								"shared",
-								"appsvcs",
-								"declare"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Step 3.3.2: Remove application from tenant through AS3",
+					"name": "Step 3.3.1: Remove application from tenant through AS3",
 					"event": [
 						{
 							"listen": "test",
@@ -987,7 +941,7 @@
 					"response": []
 				},
 				{
-					"name": "Step 3.4.1: BIGIP-01 AS3 deployment",
+					"name": "Step 3.4.1: BIGIP-1 AS3 deployment",
 					"event": [
 						{
 							"listen": "test",
@@ -1033,7 +987,7 @@
 					"response": []
 				},
 				{
-					"name": "Step 3.4.2: BIGIP-02 AS3 deployment",
+					"name": "Step 3.4.2: BIGIP-2 AS3 deployment",
 					"event": [
 						{
 							"listen": "test",
@@ -1263,10 +1217,354 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "4. Telemetry Streaming",
+			"name": "4. F5 Application Services Templates",
 			"item": [
 				{
-					"name": "Step 4.1: Configure Event listener",
+					"name": "Step 4.2.1: GET FAST info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81d8ac2d-4315-41ad-a89c-7e0f15bf14a1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/fast/templates/examples/simple_http",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"fast",
+								"templates",
+								"examples",
+								"simple_http"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 4.2.2: GET FAST applications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b547a61e-4bdf-4ee2-a261-eeb2234c284c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/fast/applications",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"fast",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 4.2.3: GET FAST templates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8046de8b-d046-4034-abce-582a1f4b4552",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/fast/templates/examples/simple_waf",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"fast",
+								"templates",
+								"examples",
+								"simple_waf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 4.2.4: Create local WAF policy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fcea29f0-ce1a-4859-93ee-7303c94172a9",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"base_waf_policy\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/tm/asm/policies",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"tm",
+								"asm",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 4.2.5: Deploy FAST simple_waf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "af910403-5323-4b74-879a-b1c37764394d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"examples/simple_waf\",\n\t\"parameters\": {\n\t\t\"tenant_name\": \"Task4_2_FAST\",\n\t\t\"application_name\": \"waf-service\",\n\t\t\"virtual_port\": 443,\n\t\t\"virtual_address\": \"10.1.1.30\",\n\t\t\"WAF_policy_path\": \"/Common/base_waf_policy\",\n\t\t\"server_port\": 80,\n\t\t\"server_address\": [\"10.1.2.35\"],\n\t\t\"certificate\": \"-----BEGIN CERTIFICATE-----\\nMIIDrjCCApagAwIBAgIEEDZqSTANBgkqhkiG9w0BAQsFADCBmDELMAkGA1UEBhMC\\nVVMxCzAJBgNVBAgTAldBMRAwDgYDVQQHEwdTZWF0dGxlMRIwEAYDVQQKEwlNeUNv\\nbXBhbnkxCzAJBgNVBAsTAklUMR4wHAYDVQQDExVsb2NhbGhvc3QubG9jYWxkb21h\\naW4xKTAnBgkqhkiG9w0BCQEWGnJvb3RAbG9jYWxob3N0LmxvY2FsZG9tYWluMB4X\\nDTE4MDgxNTEyMDAwOVoXDTI4MDgxMjEyMDAwOVowgZgxCzAJBgNVBAYTAlVTMQsw\\nCQYDVQQIEwJXQTEQMA4GA1UEBxMHU2VhdHRsZTESMBAGA1UEChMJTXlDb21wYW55\\nMQswCQYDVQQLEwJJVDEeMBwGA1UEAxMVbG9jYWxob3N0LmxvY2FsZG9tYWluMSkw\\nJwYJKoZIhvcNAQkBFhpyb290QGxvY2FsaG9zdC5sb2NhbGRvbWFpbjCCASIwDQYJ\\nKoZIhvcNAQEBBQADggEPADCCAQoCggEBALhgsSNqnxeCYeiynxwPpUW379NE08aV\\nHdR/RCNYbFlmXHtsIRWsTxt0pSNuK91b5MEY707zo/0lrW8QoINS74c6kKdeEByu\\nOcaTrn8+VFF9i46J5/1TiTblag7QZfs/B1jZt4+VMwkcL3S3tqN/ffX6FF0tuNiW\\nC8V+9l2NWqZg9hynR0mqwxSmyBRhewDtGcHHbW77q27yc4pb5Wr9nyJxUqlnqZMZ\\n73T5WMyjpVZx/3qW0CuimpWKhTET5j4G7Vv9YGkABd33EULwcCLoRGBhZ7I7qORP\\nJAIHvpt/AJyMTJXHhV7Krpn8cKZF3sgG6NVeuCbwvK3CEI5Q80QXQ4UCAwEAATAN\\nBgkqhkiG9w0BAQsFAAOCAQEAX8kOXpXCP2josNyCE50YNB63SvMSOU9Mo21bkWKz\\nEXmn+SYg+wx0RlvfcxUBjPolbVk1DZRBCB6xk5AjLJSDx+3Jz039K/Ypj4wcF+Ia\\nLIHlkAEnT0eMsUsCPRXPnnRfyVER7+ER7TQUrWRhrw+9QYLmwFXlbLzDXwEX7Wb4\\nLzjxfTZT5UoQsoE94XGScjeZJDdvDjpm1o3R5ag57MfxAFcS9rmW/tNs2xNYh3U8\\nGzeJgpH4Rm8zRdWrVeq/AEyq0CwWZxRI1S3YrqjAc+nfpVQbC06yRGRLWlCKUZwf\\npx+z/vcZaA9+e2LW3MafBNaEVcTXcOe0XOAx38AYWRCq7g==\\n-----END CERTIFICATE-----\\n\",\n\t\t\"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC4YLEjap8XgmHo\\nsp8cD6VFt+/TRNPGlR3Uf0QjWGxZZlx7bCEVrE8bdKUjbivdW+TBGO9O86P9Ja1v\\nEKCDUu+HOpCnXhAcrjnGk65/PlRRfYuOief9U4k25WoO0GX7PwdY2bePlTMJHC90\\nt7ajf331+hRdLbjYlgvFfvZdjVqmYPYcp0dJqsMUpsgUYXsA7RnBx21u+6tu8nOK\\nW+Vq/Z8icVKpZ6mTGe90+VjMo6VWcf96ltAropqVioUxE+Y+Bu1b/WBpAAXd9xFC\\n8HAi6ERgYWeyO6jkTyQCB76bfwCcjEyVx4Veyq6Z/HCmRd7IBujVXrgm8LytwhCO\\nUPNEF0OFAgMBAAECggEAI6Mi0ezjm7RqjsLpsI+QmxlqnDwHL/C2D5LavXczmBMK\\nKJv1iB4iOzUQTzkV9ubyX+VdKfY7OeycqWU+FSwEWq+18neipxyA09JLLdKDEy4w\\nOYiLw+Hv2WG93mem8olT9vc7/N9yeh4NySJSRadYliD0ay8xdYGI/G8mGN5/yT0L\\nUgj9lAHkA2UJDQlRzYFbZxF/eCWWZ6tosHraEwGKDdlqSkuZ62fQu5IoN97LIX2+\\nxPZm6t+ROdUAURe2N4zhOperh3UYxmhTTzJTn/hOf6Lhb0VVbEHj5WjxKJVp3deH\\nmBof5IZQxbm1iTzzLKP3ERwIpaaqlX+dIi9Q0pzhSQKBgQD4KqgHmkN1j8vikF3N\\nseL8JqTveQd6AKPeB+TlWH/NWubpSK9f+EUQv+gN99u79GQg2N+gIiJclOlS0i0j\\nY/xdIcpbFf7qQzaZlW0USi3nakrylnc7s3NNCWIEX/h5YsyxD/O1vwg570YXfEle\\nASNLDiIz3w6wX/ebP7CpVjc3rQKBgQC+MpSlWsldSWrr3CvWMkC1bAc2n320A9oE\\nlr/YPKgQ/1CRprplI+dF5liHxIHDnZqwnYTEYphitxj3RqTuppXu56FG3xmJWkVl\\nkxivn+E4xahqLp9aaMRvFTTw/rVUYMzxLGU/3sTW6js/EcaI+u0PY9qKXDKJwv9Z\\nYGGby28WOQKBgQCg8NkEBTFWnqj1B/ctnP291ToF7BHDN4MOTURO0HQhs6ApDnBd\\n5t6znCFcXa/tVvNQshVk/n4WWKRwh8mqN//ETlOzerJVLr3MILIbBHh8qdxtMtOk\\nrh5KiZk9iRfVcROaiOPerEMjf1+Pf5T9F/PRixr3VONr0vD7h/SD/VvWCQKBgQCU\\nV8j+Cwgg/UEqgoeiQYGcvowFu3GEdLiXeahZlD2VPDzvzPV2KwGX0CfehJKdKpBb\\nDhBeR3QJEjujqXK8PCuWsQxlxV4addDIf2jymaVE7U0EvCZHko0bApRPHqn5DKLr\\nu6+gmDQ4V2osL8YEUomQxlXOMkisj+0vHXAj3hBfaQKBgQCNei4IMcCPCh/BSGgb\\n9BUOYG0Y7856ca7nLo4x2G67NigGAp1EgvYW6i4wD/1zo7O/aF8UzYjTh7+BseO8\\nZy3N+h6eajbzu6j3I3Sp+3TGGZcw/8s5EU2SPMl3Rf25wW0M33Xn0AwxGLzUY/dX\\nNCffdM6CVXWk73y++Xahj5Aiiw==\\n-----END PRIVATE KEY-----\\n\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/fast/applications",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"fast",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "5. Telemetry Streaming",
+			"item": [
+				{
+					"name": "Step 5.0: GET TS info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3daf67ba-cc48-40ca-a65b-1f27dbf73b1b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/telemetry/info",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"telemetry",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 5.1.1: Deploy Telemetry Streaming with Azure Sentinel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "31d1cc97-f029-4a6d-96ce-1575ea37c711",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-F5-Auth-Token",
+								"value": "{{bigip_1_auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"class\": \"Telemetry\",\r\n\t\"controls\": {\r\n\t\t\"class\": \"Controls\",\r\n\t\t\"logLevel\": \"debug\",\r\n\t\t\"debug\": true\r\n\t},\r\n\t\"My_System\": {\r\n\t\t\"class\": \"Telemetry_System\",\r\n\t\t\"systemPoller\": {\r\n\t\t\t\"interval\": 60\r\n\t\t}\r\n\t},\r\n\t\"My_Listener\": {\r\n\t\t\"class\": \"Telemetry_Listener\",\r\n\t\t\"port\": 6514\r\n\t},\r\n\t\"My_Consumer\": {\r\n\t\t\"class\": \"Telemetry_Consumer\",\r\n\t\t\"type\": \"Azure_Log_Analytics\",\r\n\t\t\"workspaceId\": \"<Workspace_ID>\",\r\n\t\t\"passphrase\": {\r\n\t\t\t\"cipherText\": \"<Primary_Key>\"\r\n\t\t},\r\n\t\t\"useManagedIdentity\": false,\r\n\t\t\"region\": \"westeurope\"\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/telemetry/declare",
+							"protocol": "https",
+							"host": [
+								"{{bigip_1_mgmt}}"
+							],
+							"path": [
+								"mgmt",
+								"shared",
+								"telemetry",
+								"declare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 5.1.2: Configure Event listener",
 					"event": [
 						{
 							"listen": "test",
@@ -1312,7 +1610,7 @@
 					"response": []
 				},
 				{
-					"name": "Step 4.2: Deploy WAF to Service_HTTPS",
+					"name": "Step 5.2: Deploy WAF to Service_HTTPS",
 					"event": [
 						{
 							"listen": "test",
@@ -1351,52 +1649,6 @@
 								"mgmt",
 								"shared",
 								"appsvcs",
-								"declare"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Step 4.3: Deploy Telemetry Streaming with Azure Sentinel",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "31d1cc97-f029-4a6d-96ce-1575ea37c711",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-F5-Auth-Token",
-								"value": "{{bigip_1_auth_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"class\": \"Telemetry\",\r\n\t\"controls\": {\r\n\t\t\"class\": \"Controls\",\r\n\t\t\"logLevel\": \"debug\",\r\n\t\t\"debug\": true\r\n\t},\r\n\t\"My_System\": {\r\n\t\t\"class\": \"Telemetry_System\",\r\n\t\t\"systemPoller\": {\r\n\t\t\t\"interval\": 60\r\n\t\t}\r\n\t},\r\n\t\"My_Listener\": {\r\n\t\t\"class\": \"Telemetry_Listener\",\r\n\t\t\"port\": 6514\r\n\t},\r\n\t\"My_Consumer\": {\r\n\t\t\"class\": \"Telemetry_Consumer\",\r\n\t\t\"type\": \"Azure_Log_Analytics\",\r\n\t\t\"workspaceId\": \"<workspaceId>\",\r\n\t\t\"passphrase\": {\r\n\t\t\t\"cipherText\": \"<passphrase>\"\r\n\t\t},\r\n\t\t\"useManagedIdentity\": false,\r\n\t\t\"region\": \"westeurope\"\r\n\t}\r\n}"
-						},
-						"url": {
-							"raw": "https://{{bigip_1_mgmt}}/mgmt/shared/telemetry/declare",
-							"protocol": "https",
-							"host": [
-								"{{bigip_1_mgmt}}"
-							],
-							"path": [
-								"mgmt",
-								"shared",
-								"telemetry",
 								"declare"
 							]
 						}
