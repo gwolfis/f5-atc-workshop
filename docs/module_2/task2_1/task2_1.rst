@@ -130,4 +130,91 @@ Check the environment variables in Postman.
 
 Step 7: For Onboarding BIGIP2, repeat steps 5 and 6, but use the respected Postman declarations defined in step 2.4 and 2.5.
 
+The DO JSON schema for BIGIP-2 is included in the mentioned steps, but can be found and checked below for your reference.
+
+.. code-block:: json
+
+{
+    "schemaVersion": "1.2.0",
+    "class": "Device",
+    "async": true,
+    "label": "Onboard BIG-IP",
+    "Common": {
+        "class": "Tenant",
+        "mySystem": {
+            "class": "System",
+            "hostname": "bigip02.westeurope.azure.local"
+        },
+        "myDns": {
+            "class": "DNS",
+            "nameServers": [
+                "8.8.8.8"
+            ]
+        },
+        "myNtp": {
+            "class": "NTP",
+            "servers": [
+                "0.pool.ntp.org",
+                "1.pool.ntp.org",
+                "2.pool.ntp.org"
+            ],
+            "timezone": "Europe/Amsterdam"
+        },
+        "{{bigip_username}}": {
+            "class": "User",
+            "userType": "regular",
+            "password": "{{bigip_password}}",
+            "shell": "bash"
+        },
+        "myProvisioning": {
+            "class": "Provision",
+            "ltm": "nominal",
+			"asm": "nominal",
+            "gtm": "nominal"
+        },
+        "external": {
+            "class": "VLAN",
+            "tag": "10",
+            "mtu": "1500",
+            "interfaces": [
+                {
+                    "name": "1.1",
+                    "tagged": false
+                }
+            ]
+        },
+        "external-self": {
+            "class": "SelfIp",
+            "address": "{{bigip_2_ext_selfip_privip}}/24",
+            "vlan": "external",
+            "allowService": "default",
+            "trafficGroup": "traffic-group-local-only"
+        },
+        "internal": {
+            "class": "VLAN",
+            "tag": "20",
+            "mtu": "1500",
+            "interfaces": [
+                {
+                    "name": "1.2",
+                    "tagged": false
+                }
+            ]
+        },
+        "internal-self": {
+            "class": "SelfIp",
+            "address": "{{bigip_2_int_selfip_privip}}/24",
+            "vlan": "internal",
+            "allowService": "default",
+            "trafficGroup": "traffic-group-local-only"
+        },
+        "default-gateway": {
+            "class": "Route",
+            "gw": "{{default_gateway}}",
+            "network": "default",
+            "mtu": 1500
+        }        
+    }
+}
+
 Declarative Onboarding has finished.
