@@ -134,7 +134,7 @@ The DO JSON schema for BIGIP-2 is included in the mentioned steps, but can be fo
 
 .. code-block:: json
 
-{
+ {
     "schemaVersion": "1.2.0",
     "class": "Device",
     "async": true,
@@ -215,6 +215,6 @@ The DO JSON schema for BIGIP-2 is included in the mentioned steps, but can be fo
             "mtu": 1500
         }        
     }
-}
+ }
 
 Declarative Onboarding has finished.
