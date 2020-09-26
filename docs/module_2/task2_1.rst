@@ -5,7 +5,7 @@ Step 1: Open Postman, select the F5 ATC collection and click “2. Declarative O
 First let’s check what is already on the BIG-IP from a DO perspective.
 Step 2: The first step is always to verify if DO is installed on the BIG-IP. Select “Step 2.0: GET DO info” and click ‘Send’.
  
- .. image:: ../../png/module2/task2_1_p1.png
+ .. image:: ../png/module2/task2_1_p1.png
     :align: center
 
 The BIG-IP returns a 200 OK with the DO version currently installed.
@@ -13,7 +13,7 @@ The BIG-IP returns a 200 OK with the DO version currently installed.
 Step 3: In Postman, in the left pane, select “Step 2.1: GET DO declarations”, check the declaration, and click ‘Send’.
 When everything is correct you got and “[ ]” back which is correct since we have not declared an onboarding declaration yet.
 
-.. image:: ../../png/module2/task2_1_p2.png
+.. image:: ../png/module2/task2_1_p2.png
     :align: center
 
 Step 4: Next, let’s select “Step 2.2: Deploy Declarative Onboarding” and check the Body.
@@ -133,6 +133,7 @@ Step 7: For Onboarding BIGIP2, repeat steps 5 and 6, but use the respected Postm
 The DO JSON schema for BIGIP-2 is included in the mentioned steps, but can be found and checked below for your reference.
 
 .. code-block:: json
+   :linenos:
 
  {
     "schemaVersion": "1.2.0",

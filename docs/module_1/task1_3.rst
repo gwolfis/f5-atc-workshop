@@ -4,7 +4,7 @@ Task 1.3 - Authentication Tokens
 
 Step 1: In Postman, open the collection and select **“1. Setup auth token”**.
 
-.. image:: ../../png/module1/task1_3_p1.png
+.. image:: ../png/module1/task1_3_p1.png
     :align: center
  
 Step 2: Select **“Step 1: Retrieve Authentication Token BIGIP1”** and check the Header and Body. As you can see in the Body, you don’t need to enter a username and password, these are part of the environment variables. Hit **‘Send’** to Post the declaration.
