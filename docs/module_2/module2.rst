@@ -1,6 +1,6 @@
-**********************************
-Module 2 - Decalarative Onboarding
-**********************************
+***************************************
+Module 2 - Decalarative Onboarding (DO)
+***************************************
 
 The BIG-IP has gone through the bootstrap phase and is up and running by leveraging Terraform.
 Included in the bootstrap phase are the installation of the F5 ATC packages for DO, AS3, TS and FAST.

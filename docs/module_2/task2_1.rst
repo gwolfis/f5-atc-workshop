@@ -18,7 +18,7 @@ When everything is correct you got and “[ ]” back which is correct since we 
 
 Step 4: Next, let’s select “Step 2.2: Deploy Declarative Onboarding” and check the Body.
 
-Check underneath DO json schema and remark to following:
+Check underneath Declarative Onboarding json schema and remark to following:
 
  - It does not declare a license, since we are using PAYG
  - Since we are using TMOS > v14, we need to define a password for the admin user, though the same is kept. Prior v14, this is not needed in a DO declaration.
@@ -133,7 +133,6 @@ Step 7: For Onboarding BIGIP2, repeat steps 5 and 6, but use the respected Postm
 The DO JSON schema for BIGIP-2 is included in the mentioned steps, but can be found and checked below for your reference.
 
 .. code-block:: json
-   :linenos:
 
  {
     "schemaVersion": "1.2.0",
