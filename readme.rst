@@ -10,11 +10,5 @@ Welcome to f5-atc-workshop's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   docs/module_*
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
