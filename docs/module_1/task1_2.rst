@@ -42,3 +42,5 @@ Step 7: Use the ‘eye’ icon   to watch the configured variables.
     :align: center
 
 Postman is ready to be used within our lab.
+
+    `PREVIOUS <task1_1.rst>`__ `NEXT <task1_3.rst>`__

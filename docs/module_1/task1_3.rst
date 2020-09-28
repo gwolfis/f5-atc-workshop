@@ -13,3 +13,5 @@ The authentication Token will get retrieved and via the Postman Test and put in 
 Step 3: Select **“Step 2: Set Authentication Token Timeout BIGIP1”** to Patch the token timer and click **‘Send’**.
 
 Step 4: Repeat the previous steps for BIG-IP2 by using the defined Postman request in step 3 and 4.
+
+    `PREVIOUS <task1_2.rst>`__ `END OF SECTION <../../README.rst>`__

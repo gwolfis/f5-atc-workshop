@@ -7,9 +7,9 @@
 Welcome to f5-atc-workshop's documentation!
 *******************************************
 
-Use this README as your starting point into leveringing F5 automation toolchain. To get your environment up and running, the sections: Getting Started, Module 1 and Module 2 are mandatory. After this you can pretty much select a module or task to test, play or demo.
+Use this README as your starting point into learning F5 automation toolchain. To get your environment up and running, the sections: Getting Started, Module 1 and Module 2 are mandatory. After this you can pretty much select a module or task to test, play or demo.
 
-Hopefully this workshop will deliver the insights howtoo use F5 solutions being automated and add application services to your automated apps.
+Hopefully this workshop will deliver the insights howtoo use F5 solutions being automated and add F5 application services to your automated apps.
 
 Happy learning!!
 

@@ -10,4 +10,6 @@ This module will cover:
 -	Make Visual Studio Code ready to use
 -	Deploy the infrastructure
 -	Make Postman ready to be used
--	Create authentication tokens
+-	Create authentication token
+
+    `NEXT <task1_1.rst>`__

@@ -96,3 +96,5 @@ Terraform will take about ~5min to deploy the infrastructure. Time for coffee!
 When all is deployed, you should see this output.
 
 Step 18: Use your Azure credentials to open the Azure portal and select your resource group referenced by your student number. You should see all the deployed infrastructure objects.
+
+    `PREVIOUS <module_1.rst>`__ `NEXT <task1_2.rst>`__
