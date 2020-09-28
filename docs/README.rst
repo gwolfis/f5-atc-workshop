@@ -13,7 +13,7 @@ Hopefully this workshop will deliver the insights howtoo use F5 solutions being 
 
 Happy learning!!
 
-`Getting Started <Getting Started.rst>`__
+`Getting Started <../Getting Started.rst>`__
 **********************************************
 
 `Module 1 - Starting the lab environment <module_1/module.rst>`__
