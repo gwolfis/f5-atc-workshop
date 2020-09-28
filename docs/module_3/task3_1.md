@@ -1,13 +1,11 @@
-**********************************************
-Task 3.1 – HTTP Service with Service Discovery
-**********************************************
+# Task 3.1 – HTTP Service with Service Discovery
+
 
 In this exercise you will deploy an AS3 HTTP_Service declaration where service-discovery of poolmembers is taking place.
 
 Step 1: Let’s check if AS3 has been installed on the BIG-IP by selecting **“Step 3.0: Deploy AS3 info”** and click **‘Send’**.
 
-.. image:: ../png/module3/task3_1_p1.png
-    :align: center
+![](../png/module3/task3_1_p1.png)
 
 It will return a 200 OK with the installed version of AS3.
 
@@ -18,9 +16,8 @@ Step 3:	Open the Postman collection ``“F5 ATC – EMEA Partner Workshop”`` a
 
 Step 4: Select **“Step3.1: Deploy HTTP_Service”** and check the Body specifically at the poolmembers section. The declaration is included below for reference.
 
-.. code-block:: json
-
- {
+```json
+{
     "class": "AS3",
     "action": "deploy",
     "declaration": {
@@ -62,43 +59,38 @@ Step 4: Select **“Step3.1: Deploy HTTP_Service”** and check the Body specifi
                             "apiAccessKey": "{{client_secret}}",
                             "credentialUpdate": false
                         }
-
                     ]
                 }
             }            
         }
     }
- }
+}
+```
 
 
+Step 5: Click **‘Send’** to POST “Step 3.1: Deploy HTTP_Service” you should receive a 200 OK
 
-Step 5: Click ‘Send’ to POST “Step 3.1: Deploy HTTP_Service” you should receive a 200 OK
+![](../png/module3/task3_1_p2.png)
 
-.. image:: ../png/module3/task3_1_p2.png
-    :align: center
 
 Step 6: Log into the BIG-IP and check the local traffic configuration. 
 
 Be SURE to change the partition into the created App_Services partion to check the created VS.
 
-.. image:: ../png/module3/task3_1_p3.png
-    :align: center 
+![](../png/module3/task3_1_p3.png)
 
+![](../png/module3/task3_1_p4.png)
 
-.. image:: ../png/module3/task3_1_p4.png
-    :align: center
 
 You will notice that the Virtual Server is marked ‘Green’. Let’s grab the VS (VIP) public IP address from the Terraform output and test it. You will see either web01 or web02 respond.
 
-.. image:: ../png/module3/task3_1_p5.png
-    :align: center
+![](../png/module3/task3_1_p5.png)
 
 Remember we did not include pool members into our initial configuration (JSON declared AS3 schema).
 
 Step 7: Let’s check out what the Local > Pools > Pool1 and select the Members section:
 
-.. image:: ../png/module3/task3_1_p6.png
-    :align: center
+![](../png/module3/task3_1_p6.png)
 
 This pool includes two poolmembers and those are discovered via service-discovery config declared via AS3.
 
@@ -109,19 +101,16 @@ You can check this in Visual **Studio Code > bigip-3nic-setup > webservers.tf** 
 Step 8: Now let’s verify these tags in Azure by open a browser and click the Azure portal link and select your personal resource group referenced by your student number.
 Select virtual machine web01 and verify the name tag and value.
 
-.. image:: ../png/module3/task3_1_p7.png
-    :align: center
+![](../png/module3/task3_1_p7.png)
 
 Step 9: In the same window, select tags and change the tag **‘service-discovery’** value from ‘true’ to ‘false’ and click **‘Save’**.
 
-.. image:: ../png/module3/task3_1_p8.png
-    :align: center
+![](../png/module3/task3_1_p8.png)
 
 Step 10: Now, go back to your BIG-IP and check your poolmembers in Pool1. How many pool members do you see?
  
-.. image:: ../png/module3/task3_1_p9.png
-    :align: center
-
+![](../png/module3/task3_1_p9.png)
+ 
 Step 11: Change back the tag value to **‘true’** in the Azure Portal and check the poolmembers section again.
 Service-discovery of poolmembers can serve use cases, like:
 

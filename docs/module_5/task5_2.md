@@ -1,6 +1,4 @@
-*********************************************
-Task 5.2 - Include WAF via an AS3 declaration
-*********************************************
+# Task 5.2 - Include WAF via an AS3 declaration
 
 Step 1: Log into the BIG-IP and check:
  - The partitions section if besides partition Common, no other partition exists.
@@ -9,9 +7,8 @@ Step 1: Log into the BIG-IP and check:
 
 Step 2: Go through below JSON schema and change the B-octet of each IP address to align with your student number.
 
-.. code-block:: json
-
- {
+```json
+{
     "class": "AS3",
     "action": "deploy",
     "declaration": {
@@ -83,8 +80,8 @@ Step 2: Go through below JSON schema and change the B-octet of each IP address t
             }
         }
     }
- }
-
+}
+```
 
 Notice the following:
  - The AS3 declaration makes use of Service_HTTPS.
@@ -96,17 +93,17 @@ Step 4: Wait for the 200 OK and go into the BIG-IP to check the config.
 Be sure to select the right tenant or you won’t see any configuration.
 Go to **Local Traffic > serviceMain **and check the used **Request Logging Profile**.
 
-.. image:: ../png/module5/task5_2_p1.png
-    :align: center 
+![](../png/module5/task5_2_p1.png)
+
 
 Step 5: Next, in the virtual server section, select the tab **‘Security’** and click **‘Policies’**.
 
-.. image:: ../png/module5/task5_2_p2.png
-    :align: center 
+![](../png/module5/task5_2_p2.png)
 
 Be sure you see the WAF policy enabled and the log profile ‘Log all requests’ and ‘telemetry_security_log_profile’ has been Selected. Optional, you can check the WAF policy in the security section.
 
 Step 6: Test the website by using the following URL: http://<BIG-IP_external_public_vip_address>. You will get redirected to HTTPS and ignore the warning.
+
 Step 7: Login to the DVWA server with the credentials admin/password and do the following actions:
 
  - Click **‘Create / Reset Database’**.
@@ -123,7 +120,7 @@ All we just did was generating some traffic to get or logs filled.
 
 Step 8: Go back to the BIG-IP and check **Security > Event Logs** and you should see something similar as below.
 
-.. image:: ../png/module5/task5_2_p3.png
+![](../png/module5/task5_2_p3.png)
     :align: center 
 
 At this point it is proven that we have a working setup where a WAF policy is protecting a DVWA server from being compromised. 

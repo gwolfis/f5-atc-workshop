@@ -1,6 +1,5 @@
-**********************************
-Task 3.3 – ServiceMain and Generic
-**********************************
+# Task 3.3 – ServiceMain and Generic
+
 
 Service_HTTP and Service_HTTPS where the default templates until AS3 v3.20. These templates enforce to name each created virtual service to be named serviceMain. From v3.20 this has changed from serviceMain into service. Also, the generic template has become the default now which allows to use any name.
 
@@ -12,9 +11,8 @@ Task 3.3 covers:
 
 Step 1: In Postman, select **“Step 3.3: Deploy serviceMain and service Generic”**.
 
-.. code-block:: JSON
-
- {
+```json
+{
     "class": "AS3",
     "persist": false,
     "declaration": {
@@ -91,13 +89,12 @@ Step 1: In Postman, select **“Step 3.3: Deploy serviceMain and service Generic
             }
         }
     }
- }
-
+}
+```
 
 Step 2: Click **‘Send’** and after the 200 OK in the response, check the BIG-IP.
 
-.. image:: ../png/module3/task3_3_p1.png
-    :align: center
+![](../png/module3/task3_3_p1.png)
 
 Within one tenant both Service_HTTPS and a Service_Generic are deployed.
 
@@ -119,8 +116,8 @@ Step 4: What if we would want to reuse the same poolmembers and share it among t
 We are going to use a POST to add a function by copying the previous JSON schema into the body of **“Step 3.3: Deploy serviceMain and service Generic with shared poolmembers”**.
 Next in the body find pool member section of my_generic_app and add the poolmember as shown in the picture.
 
-.. image:: ../png/module3/task3_3_p2.png
-    :align: center
+![](../png/module3/task3_3_p2.png)
+
   
 Don’t forget to obey the JSON syntax set a comma after the first IP address, before adding “{{webserver_2}}”. 
 
@@ -133,7 +130,7 @@ Step 6: Now, let’s delete the deployment, but this time we only delete one app
 
 Select **“Step 3.3.1: Remove application from tenant through AS3”** and select the body.
  
-.. code-block:: json
+```json
 
  [
   {
@@ -142,7 +139,7 @@ Select **“Step 3.3.1: Remove application from tenant through AS3”** and sele
     "value": []
   }
  ]
-
+```
 The operator task is now to ‘remove’ and notice the path which is pointing to my_generic_app.
 Now copy and paste and click **‘Send’**.
 
@@ -150,7 +147,7 @@ Step 7: Check the declaration via GET, this can be achieved by grabbing the decl
 
 Step 8: Check the BIG-IP. It should look similar as the below picture, where my_generic_app has been removed.
 
-.. image:: ../png/module3/task3_3_p3.png
+![](../png/module3/task3_3_p3.png)
     :align: center
 
 Step 9: Remove the entire config by selecting **“Step 3.3.3: Delete AS3 declaration serviceMain and generic”** and press **‘Send’**.

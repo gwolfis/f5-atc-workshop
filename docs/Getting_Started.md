@@ -1,9 +1,6 @@
-================================
-F5 Automation Toolchain Workshop
-================================
+# F5 Automation Toolchain Workshop
 
-Getting Started
-===============
+## Getting Started
 
 This workshop is intended to give more inside in the use of F5 Automation Toolchain and uses Terraform to deploy infrastructure, BIG-IPs and backends automatically in Azure public cloud.
 
@@ -14,8 +11,7 @@ When you are not familiar with F5 automation Toolchain, please go to: `https://c
 Those who already have done the introduction to Automation & Orchestration aka supernetops training are invited to use this workshop to gain more understanding of the entire toolchain F5 has developed.
 
 
-Starting with UDF
-=================
+## Starting with UDF
 
 When you are an F5 employee, select the “F5 EMEA Automation Toolchain Workshop” from the UDF Blueprint section and start deploying.
 When you are invited by F5 into this workshop, you will get an invition by email and through UDF classroom will be able to launch the blueprint.
@@ -23,8 +19,7 @@ The student will find that a resource_group **‘student<number>-f5-atc-workshop
 During the workshop which uses UDF, this is done for you. Once getting invited this resource group is there with the right location. Terraform will create its infrastructure here.
 
 
-Starting the lab without UDF
-============================
+## Starting the lab without UDF
 
 When you don't have access to UDF, please align to the mentioned per-requisites:
  * Having an Azure account.
@@ -33,9 +28,8 @@ When you don't have access to UDF, please align to the mentioned per-requisites:
 
 In the setup_changeme.yml the resource group and location are hardcoded and should be adjusted accordingly.
 
-.. image:: png/getting_started/network_diagram.png
-      :align: center
+![](png/getting_started/network_diagram.png)
 
-.. image:: png/getting_started/workshop_overview_table.png
-      :align: center
+
+![](png/getting_started/workshop_overview_table.png)
 

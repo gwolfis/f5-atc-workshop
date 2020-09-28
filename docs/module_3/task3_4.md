@@ -1,6 +1,4 @@
-*****************************************************
-Task 3.4 – Use of Global Server Load Balancing (GSLB)
-*****************************************************
+# Task 3.4 – Use of Global Server Load Balancing (GSLB)
 
 This task will teach how to setup Global Server Load Balancing (GSLB) using AS3 declarations. 
 To accomplish this, the following actions need to take place:
@@ -18,9 +16,8 @@ Step 2: In Postman, go to **“Step 3.4.1: BIGIP-1 AS3 deployment”** and selec
 
 Before doing so, think what this AS3 declaration will do?
 
-.. code-block:: json
-
- {
+```json
+{
     "class": "AS3",
     "action": "deploy",
     "declaration": {
@@ -78,16 +75,16 @@ Before doing so, think what this AS3 declaration will do?
             }            
         }
     }
- }
-
+}
+```
 
 Step 3: Wait for the 200 response and check the declared AS3 deployment on BIG-IP01 and test if get answer from the backend when hitting the virtual server in a browser.
 
 Step 4: Select **“Step 3.4.2: BIGIP-02 AS3 deployment”** and copy and paste underneath body and click **‘Send’**.
 
-.. code-block:: json
+```json
 
-  {
+{
     "class": "AS3",
     "action": "deploy",
     "declaration": {
@@ -145,8 +142,8 @@ Step 4: Select **“Step 3.4.2: BIGIP-02 AS3 deployment”** and copy and paste 
             }            
         }
     }
- }
-
+}
+```
 
 Step 5: Check the config on BIG-IP02 and test it just like step 3.
 
@@ -155,9 +152,8 @@ Step 6: Both BIG-IPs have the same ‘local’ configuration and if those should
 **Select “Step 3.4.3: Deploy GSLB”** and check the JSON body below to understand what get’s declared.
 
 
-.. code-block:: json
-
- {
+```json
+{
     "class": "ADC",
     "schemaVersion": "3.6.0",
     "id": "GSLB_Sample",
@@ -263,9 +259,11 @@ Step 6: Both BIG-IPs have the same ‘local’ configuration and if those should
 
         }
     }
- }
+}
+```
 
 Step 7: Copy and paste it into the body of step 3.4.3 and select **‘Send’**.
+
 Step 8: Check your BIG-IP and be sure to check the right one and select the right tenant and go to:
 
  - GSLB > Wide IPs and select the created WIP.
@@ -275,9 +273,8 @@ Step 8: Check your BIG-IP and be sure to check the right one and select the righ
 
 All should be green, so let’s start testing.
 
-*******
-TESTING
-*******
+
+## Testing
 
 Step 9: In the Jumphost open a Linux terminal or the VSC terminal.
 
@@ -286,8 +283,7 @@ Step 10: In bash type the following: **dig @<server> name <wideIP>**
 Server = BIGIP-2 external IP address
 wideIP = lab.f5atc.local
 
-.. image:: ../png/module3/task3_4_p1.png
-    :align: center
+![](../png/module3/task3_4_p1.png)
  
 
 You should see two A records getting resolved, which means that both VS in the GTM pool are responding.

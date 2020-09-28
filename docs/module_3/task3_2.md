@@ -1,13 +1,12 @@
-*****************************************************
-Task 3.2 – Service HTTPS using HTTP to HTTPS redirect
-*****************************************************
+# Task 3.2 – Service HTTPS using HTTP to HTTPS redirect
+
 
 This exercise will deploy application service using the Service HTTPS class and include adding a HTTP to HTTPS redirect.
 If you left the previous HTTP Service deployed, then remember that a POST will update the current deployed application service with new deployed declaration.
 
 Step 1: In Postman, open the collection **“F5 ATC – EMEA Partner Workshop”** and next select **“3. AS3 Declarations”**. Select **“Step 3.2: Deploy HTTP to HTTPS redirect Service”** and verify underneath JSON schema. 
 
-.. code-block:: json
+```json
 
  {
     "class": "AS3",
@@ -69,14 +68,14 @@ Step 1: In Postman, open the collection **“F5 ATC – EMEA Partner Workshop”
         }
     }
  }
-
+```
 
 
 Step 2: Click **‘Send’**.
 Step 3: Verify the declaration in the BIG-IP. You should have the same sight as the figure below.
 
-.. image:: ../png/module3/task3_2_p1.png
-    :align: center 
+![](../png/module3/task3_2_p1.png)
+
 
 Step 4: Test the VS opening a web browser and go `http://<BIG-IP_external_public_vip_address>`
 
@@ -84,15 +83,15 @@ Step 5: Notice the redirect to HTTPS.
 
 Step 6: Another thing you will notice is the fact that once a backend has been chosen, it will stick with that one. Go the web browser web01 or web02 depending which backend responded and click **Demos > View Request and Response Headers** and check the cookie section.
 
-.. image:: ../png/module3/task3_2_p2.png
-    :align: center
+![](../png/module3/task3_2_p2.png)
+
 
 Cookie persistence is added as a default value to Service_HTTP and Service_HTTPS defined AS3 templates.
 
 Step 7: In the collection, AS3 section, select **“Step 3.2.1: Disable persistence ServiceMain”** and click **‘Send’**.
 The persistence method gets changed by using a PATCH.
 
-.. image:: ../png/module3/task3_2_p3.png
+![](../png/module3/task3_2_p3.png)
     :align: center
 
 PATCH can be used on several occasions where configuration should be modified to change the POST-ed declaration. The PATCH method will use an operator, in this case “add”. It needs a path and a value. For no persistence, the value of ‘persistenceMethods: []’.
