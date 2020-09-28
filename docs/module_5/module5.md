@@ -7,3 +7,5 @@ This task will cover:
  - Create an event listener
  - Deploy AS3 declaration, including a WAF policy
  - Deploy a Telemetry Streaming declaration
+
+[PREVIOUS](../module_4/task4_2.md)      [NEXT](task5_1.md)

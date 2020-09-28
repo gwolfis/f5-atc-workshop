@@ -148,8 +148,9 @@ Step 7: Check the declaration via GET, this can be achieved by grabbing the decl
 Step 8: Check the BIG-IP. It should look similar as the below picture, where my_generic_app has been removed.
 
 ![](../png/module3/task3_3_p3.png)
-    :align: center
 
 Step 9: Remove the entire config by selecting **“Step 3.3.3: Delete AS3 declaration serviceMain and generic”** and press **‘Send’**.
 
 Step 10: Check the BIG-IP if the tenant has been removed.
+
+[PREVIOUS](task3_2.md)      [NEXT](task3_4.md)

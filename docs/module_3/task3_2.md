@@ -92,7 +92,7 @@ Step 7: In the collection, AS3 section, select **“Step 3.2.1: Disable persiste
 The persistence method gets changed by using a PATCH.
 
 ![](../png/module3/task3_2_p3.png)
-    :align: center
+
 
 PATCH can be used on several occasions where configuration should be modified to change the POST-ed declaration. The PATCH method will use an operator, in this case “add”. It needs a path and a value. For no persistence, the value of ‘persistenceMethods: []’.
 Step 8: Re-test the backends and notice that you now will get switched between both backends. Be aware that cached objects of both backends will be shown.
@@ -103,3 +103,5 @@ Step 9: Delete the declaration by selecting **“Step 3.2.3: Delete Service_HTTP
  -	The declaration needs to include the “id” and “Tenant” name at a minimum. As you can see the rest stays empty.
 
 Step 10: Press **‘Send’** and check the BIG-IP. What got removed?
+
+[PREVIOUS](task3_1.md)      [NEXT](task3_3.md)

@@ -10,3 +10,4 @@ This module will cover:
 -	Make Postman ready to be used
 -	Create authentication token
 
+[PREVIOUS](../Getting_started.md)      [NEXT](task1_1.md)

@@ -117,3 +117,5 @@ Service-discovery of poolmembers can serve use cases, like:
  -	Taking a server backend from the pool for maintenance.
  -	Switch poolmember between ‘prod’ and ‘test’ environment.
  -	Automatically scale poolmembers when more get ramped up due to public cloud auto-scaling services.
+
+[PREVIOUS](module3.md)      [NEXT](task3_2.md)

@@ -9,3 +9,5 @@ Throughout this lab we only touched the BIG-IP to verify API declared configurat
 After having explored the FAST GUI, it is time to return to our new habbit and use REST API to deploy FAST.
 
 FAST can be used to build custom templates, but this is out of scope for this workshop, for now.
+
+[PREVIOUS](../module_3/task3_4.md)      [NEXT](task4_1.md)

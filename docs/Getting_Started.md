@@ -33,3 +33,4 @@ In the setup_changeme.yml the resource group and location are hardcoded and shou
 
 ![](png/getting_started/workshop_overview_table.png)
 
+[PREVIOUS](../README.md)      [NEXT](module_1/module1.md)

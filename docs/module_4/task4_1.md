@@ -15,17 +15,15 @@ Step 2: You must Sign in before getting access to the FAST extension (same as BI
 Step 3: The start window does not show much at this point but take your time to go through the tabs before continuing.
 
 ![](../png/module4/task4_1_p3.png)
-    :align: center
 
 Step 4: Let’s deploy our first template using the FAST extension. Select tab ‘Deploy’ and in the “Available Templates” select ‘bigip-fast-templates’ and then click ‘bigip-fast-templates/http’.
 
 ![](../png/module4/task4_1_p4.png)
-    :align: center
 
 Step 5: Fill in the template with the following values:
 
 ![](../png/module4/task4_1_p5.png)
-    :align: center
+
 
 Leave everything else at the default values.
 
@@ -41,3 +39,4 @@ Step 8: Let’s go to the ‘Application List’ and watch our first template be
 Scroll down to the bottom of the page and use the different buttons to view the Template, Schema, Inputs and Rendered.
 Output is shown below the buttons.
 
+[PREVIOUS](module4.md)      [NEXT](task4_2.md)

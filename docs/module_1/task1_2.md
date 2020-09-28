@@ -32,7 +32,7 @@ Step 6: In Postman, go to the environment section in the top right and use the d
 Step 7: Use the ‘eye’ icon   to watch the configured variables.
 
 ![](../png/module1/task1_2_p6.png)
-    :align: center
 
 Postman is ready to be used within our lab.
 
+[PREVIOUS](task1_1.md)      [NEXT](task1_3.md)

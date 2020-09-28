@@ -121,6 +121,7 @@ All we just did was generating some traffic to get or logs filled.
 Step 8: Go back to the BIG-IP and check **Security > Event Logs** and you should see something similar as below.
 
 ![](../png/module5/task5_2_p3.png)
-    :align: center 
 
 At this point it is proven that we have a working setup where a WAF policy is protecting a DVWA server from being compromised. 
+
+[PREVIOUS](task5_1.md)      [NEXT](task5_3.md)

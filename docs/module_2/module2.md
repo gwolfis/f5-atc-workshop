@@ -11,3 +11,5 @@ Let’s move into the onboarding phase and make the BIG-IP aware of its environm
 
 For more Declarative Onboarding details, please follow the link: 
 https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/
+
+[PREVIOUS](../module_1/task1_3.md)      [NEXT](task2_1.md)

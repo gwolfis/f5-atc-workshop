@@ -57,7 +57,6 @@ Step 6: Now, based on the ‘required’ list a template has been created in the
 Step 7: Check the FAST deployed applications on the BIG-IP.
 
 ![](../png/module4/task4_2_p6.png)
-    :align: center
 
 Check the deploy log and after this select the right partition and test if you have connection to the backend.
 
@@ -65,3 +64,7 @@ Step 8: To clean up what has been created by FAST. Go into the FAST template sec
 
 This concludes FAST for this workshop. 
 Be aware that FAST goes beyond this point by letting you create your own FAST templates. More details can be found here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/userguide/template-authoring.html
+
+[PREVIOUS](task4_1.md)      [NEXT](../module_5/module5.md)
+
+or go back to the [README](../../README.md)
