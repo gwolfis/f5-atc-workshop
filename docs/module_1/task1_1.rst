@@ -7,7 +7,7 @@ Step 1: From UDF, start an RDP session to the Jumphost. For modern laptops it mi
     :align: center
     :scale: 60%
     
-Step 2: In the Remote Desktop Connection popup select ‘Connect’. Ignore the warning that the identity could not be verified and click ‘Yes’.
+Step 2: In the Remote Desktop Connection popup select **‘Connect’**. Ignore the warning that the identity could not be verified and click **‘Yes’**.
 Step 3: Login to Ubuntu with ``f5student/f5student123``.
 
 .. image:: ../png/module1/task1_1_p2.png
@@ -16,14 +16,14 @@ Step 3: Login to Ubuntu with ``f5student/f5student123``.
 
 Step 4: Ignore any authentication pop-up by pressing **Cancel**.
 
-Step 5: At the desktop, select ‘Activities’ in the upper left corner and select 
+Step 5: At the desktop, select **‘Activities’** in the upper left corner and select 
 
 .. image:: ../png/module1/task1_1_p3.png
     :align: center
 
 from the menu on the left. This will start Visual Studio Code.
 
-Step 6: When no Terminal is shown, go to ‘Terminal’ and select ‘new Terminal’.
+Step 6: When no Terminal is shown, go to ‘Terminal’ and select **‘new Terminal’**.
  
 .. image:: ../png/module1/task1_1_p4.png
     :align: center
