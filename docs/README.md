@@ -12,7 +12,7 @@ Happy learning!!
 [Getting Started](Getting_Started.rst)
 
 ******************************************************************
-[Module 1 - Starting the lab environment](module_1/module1)
+[Module 1 - Starting the lab environment](module_1/module1.rst)
 ******************************************************************
  * `Task 1.1 - Explore and start the lab environment <module_1/module1.rst/task1_1>`__
  * `Task 1.2 - Setup Postman <module_1/module1.rst/task1_2>`__
