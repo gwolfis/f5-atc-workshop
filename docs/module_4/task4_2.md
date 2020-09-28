@@ -1,7 +1,7 @@
 # Task 4.2 – Use FAST via the API
 
 
-Step 1: Open Postman and go to the “4. F5 Application Services Templates (FAST)” in the “Collections” and select **“Step 4.2.1: GET FAST info”** and hit **‘Send’**.
+**Step 1:** Open Postman and go to the “4. F5 Application Services Templates (FAST)” in the “Collections” and select **“Step 4.2.1: GET FAST info”** and hit **‘Send’**.
 Since FAST depends on AS3 you will see info about both.
 
 ![](../png/module4/task4_2_p1.png)
@@ -9,32 +9,32 @@ Since FAST depends on AS3 you will see info about both.
 (rest of output omitted)
 Read through the response to understand what gets delivered.
 
-Step 2: Select **“Step 4.2.2: GET FAST applications”** to show if any applications are deployed using FAST.
+**Step 2:** Select **“Step 4.2.2: GET FAST applications”** to show if any applications are deployed using FAST.
 When you did not delete the FAST app deployment from the previous task, you should see this http-service showing up.
 
 ![](../png/module4/task4_2_p2.png)
 
 (rest of output omitted)
 
-Step 3: To be able to deploy an application using FAST we need a template. 
+**Step 3:** To be able to deploy an application using FAST we need a template. 
 In Postman, select **“Step 4.2.3: GET FAST templates”** and hit **‘Send’**.
 
 ![](../png/module4/task4_2_p3.png)
 
-Step 4: Copy “examples/simple_waf” from the response and paste it into the URI after /templates.
+**Step 4:** Copy “examples/simple_waf” from the response and paste it into the URI after /templates.
 Like this: https://{{bigip_1_mgmt}}/mgmt/shared/fast/templates/examples/simple_waf and hit **‘Send’**.
 The examples/simple_waf template layout is shown in the response. Scroll through to understand which options you can configure and pay special attention to the ‘required’ list.
 
 ![](../png/module4/task4_2_p4.png)
 
-Step 5: Before moving on with creating the template, FAST expects the WAF policy already to be present on the BIG-IP. So, first let’s install this policy by going into Postman and select “Step 4.2.4: Create local WAF policy” and check the URI and Body. This is not an AS3 nor a FAST-related REST call. Be aware that with all the ‘magic’ created by F5 automation toolchain, the BIG-IP still has a full functioning ‘Native’ iControl REST API. 
+**Step 5:** Before moving on with creating the template, FAST expects the WAF policy already to be present on the BIG-IP. So, first let’s install this policy by going into Postman and select “Step 4.2.4: Create local WAF policy” and check the URI and Body. This is not an AS3 nor a FAST-related REST call. Be aware that with all the ‘magic’ created by F5 automation toolchain, the BIG-IP still has a full functioning ‘Native’ iControl REST API. 
 This request just creates a WAF policy which gets stored in the partition /Common.
 
 ![](../png/module4/task4_2_p5.png)
 
 Hit **‘Send’**.
 
-Step 6: Now, based on the ‘required’ list a template has been created in the below section. Copy and paste it into the body of “Step 4.2.5: Deploy FAST simple_waf” and click ‘Send’.
+**Step 6:** Now, based on the ‘required’ list a template has been created in the below section. Copy and paste it into the body of “Step 4.2.5: Deploy FAST simple_waf” and click ‘Send’.
 
 ```json
 
@@ -54,13 +54,13 @@ Step 6: Now, based on the ‘required’ list a template has been created in the
 }
 ```
 
-Step 7: Check the FAST deployed applications on the BIG-IP.
+**Step 7:** Check the FAST deployed applications on the BIG-IP.
 
 ![](../png/module4/task4_2_p6.png)
 
 Check the deploy log and after this select the right partition and test if you have connection to the backend.
 
-Step 8: To clean up what has been created by FAST. Go into the FAST template section and in the ‘Application List’ delete both FAST deployments.
+**Step 8:** To clean up what has been created by FAST. Go into the FAST template section and in the ‘Application List’ delete both FAST deployments.
 
 This concludes FAST for this workshop. 
 Be aware that FAST goes beyond this point by letting you create your own FAST templates. More details can be found here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/userguide/template-authoring.html

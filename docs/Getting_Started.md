@@ -6,7 +6,7 @@ This workshop is intended to give more inside in the use of F5 Automation Toolch
 
 F5 Automation Toolchain delivers that a BIG-IP can be turned into code and deployed in a declarative and automated way to provide L4- L7 application services. 
 
-When you are not familiar with F5 automation Toolchain, please go to: `https://clouddocs.f5.com/ <http://clouddocs.f5.com>`_  and start reading.
+When you are not familiar with F5 automation Toolchain, please go to: https://clouddocs.f5.com/  and start reading.
 
 Those who already have done the introduction to Automation & Orchestration aka supernetops training are invited to use this workshop to gain more understanding of the entire toolchain F5 has developed.
 

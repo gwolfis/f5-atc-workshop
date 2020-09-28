@@ -1,11 +1,11 @@
 # Task 5.2 - Include WAF via an AS3 declaration
 
-Step 1: Log into the BIG-IP and check:
+**Step 1:** Log into the BIG-IP and check:
  - The partitions section if besides partition Common, no other partition exists.
  - The Local Traffic section that no VS, pool or poolmember exists.
  - The Security section that no WAF policy exists.
 
-Step 2: Go through below JSON schema and change the B-octet of each IP address to align with your student number.
+**Step 2:** Go through below JSON schema and change the B-octet of each IP address to align with your student number.
 
 ```json
 {
@@ -87,24 +87,24 @@ Notice the following:
  - The AS3 declaration makes use of Service_HTTPS.
  - Check the WAF policy and understand that it gets pulled from an external source.
 
-Step 3: In Postman, select **“Step 5.2: Deploy HTTP_Service with WAF”** press **‘Send’**.
+**Step 3:** In Postman, select **“Step 5.2: Deploy HTTP_Service with WAF”** press **‘Send’**.
 
-Step 4: Wait for the 200 OK and go into the BIG-IP to check the config.
+**Step 4:** Wait for the 200 OK and go into the BIG-IP to check the config.
 Be sure to select the right tenant or you won’t see any configuration.
 Go to **Local Traffic > serviceMain **and check the used **Request Logging Profile**.
 
 ![](../png/module5/task5_2_p1.png)
 
 
-Step 5: Next, in the virtual server section, select the tab **‘Security’** and click **‘Policies’**.
+**Step 5:** Next, in the virtual server section, select the tab **‘Security’** and click **‘Policies’**.
 
 ![](../png/module5/task5_2_p2.png)
 
 Be sure you see the WAF policy enabled and the log profile ‘Log all requests’ and ‘telemetry_security_log_profile’ has been Selected. Optional, you can check the WAF policy in the security section.
 
-Step 6: Test the website by using the following URL: http://<BIG-IP_external_public_vip_address>. You will get redirected to HTTPS and ignore the warning.
+**Step 6:** Test the website by using the following URL: http://<BIG-IP_external_public_vip_address>. You will get redirected to HTTPS and ignore the warning.
 
-Step 7: Login to the DVWA server with the credentials admin/password and do the following actions:
+**Step 7:** Login to the DVWA server with the credentials admin/password and do the following actions:
 
  - Click **‘Create / Reset Database’**.
  - Login again.
@@ -118,7 +118,7 @@ Step 7: Login to the DVWA server with the credentials admin/password and do the 
 
 All we just did was generating some traffic to get or logs filled.
 
-Step 8: Go back to the BIG-IP and check **Security > Event Logs** and you should see something similar as below.
+**Step 8:** Go back to the BIG-IP and check **Security > Event Logs** and you should see something similar as below.
 
 ![](../png/module5/task5_2_p3.png)
 

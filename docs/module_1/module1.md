@@ -1,6 +1,7 @@
 # Module 1 - Starting the lab environment
 
 In this module the environment will be set ready to deploy the pre-defined infrastructure and setup the used tools correctly to have a smooth lab experience.
+
 This module will cover:
 
 -	Remote login into the Jumphost

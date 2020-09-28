@@ -9,7 +9,7 @@ Task 3.3 covers:
  -	Declare multiple applications in one AS3 deployment.
  -	Use of PATCH to modify applications within a tenant.
 
-Step 1: In Postman, select **“Step 3.3: Deploy serviceMain and service Generic”**.
+**Step 1:** In Postman, select **“Step 3.3: Deploy serviceMain and service Generic”**.
 
 ```json
 {
@@ -92,7 +92,7 @@ Step 1: In Postman, select **“Step 3.3: Deploy serviceMain and service Generic
 }
 ```
 
-Step 2: Click **‘Send’** and after the 200 OK in the response, check the BIG-IP.
+**Step 2:** Click **‘Send’** and after the 200 OK in the response, check the BIG-IP.
 
 ![](../png/module3/task3_3_p1.png)
 
@@ -107,12 +107,12 @@ Notice the following:
  - Web01 is used as a poolmember for my_generic_app.
  - Web02 is used as a poolmember for ServiceMain.
 
-Step 3: Test the configuration by opening a web browser and test the different defined virtual servers:
+**Step 3:** Test the configuration by opening a web browser and test the different defined virtual servers:
 
  -	`http://<BIG-IP_external_public_vip_address>`
  -	`http://<BIG-IP_external_public_vip_address>:8080`
 
-Step 4: What if we would want to reuse the same poolmembers and share it among the applications…
+**Step 4:** What if we would want to reuse the same poolmembers and share it among the applications…
 We are going to use a POST to add a function by copying the previous JSON schema into the body of **“Step 3.3: Deploy serviceMain and service Generic with shared poolmembers”**.
 Next in the body find pool member section of my_generic_app and add the poolmember as shown in the picture.
 
@@ -121,12 +121,12 @@ Next in the body find pool member section of my_generic_app and add the poolmemb
   
 Don’t forget to obey the JSON syntax set a comma after the first IP address, before adding “{{webserver_2}}”. 
 
-Step 5: Click **‘Send’** and check the response by browsing to `http://<BIG-IP_external_public_vip_address>:8080`
+**Step 5:** Click **‘Send’** and check the response by browsing to `http://<BIG-IP_external_public_vip_address>:8080`
 
 Use ‘Ctrl+F5’ to refresh and switch between the poolmembers.
 	Adding a poolmember could be done by using a PATCH as well.
 
-Step 6: Now, let’s delete the deployment, but this time we only delete one application within the existing tenant. We can do this in two different ways, either by modifying the previous POST and delete the application section which we want to be removed from the tenant by re-POST-ing the declaration in its new existence or by using a PATCH.
+**Step 6:** Now, let’s delete the deployment, but this time we only delete one application within the existing tenant. We can do this in two different ways, either by modifying the previous POST and delete the application section which we want to be removed from the tenant by re-POST-ing the declaration in its new existence or by using a PATCH.
 
 Select **“Step 3.3.1: Remove application from tenant through AS3”** and select the body.
  
@@ -143,14 +143,14 @@ Select **“Step 3.3.1: Remove application from tenant through AS3”** and sele
 The operator task is now to ‘remove’ and notice the path which is pointing to my_generic_app.
 Now copy and paste and click **‘Send’**.
 
-Step 7: Check the declaration via GET, this can be achieved by grabbing the declaration from Step 3.3 and change the declaration method from POST to GET and hit ‘Send’ and watch the response. 
+**Step 7:** Check the declaration via GET, this can be achieved by grabbing the declaration from Step 3.3 and change the declaration method from POST to GET and hit ‘Send’ and watch the response. 
 
-Step 8: Check the BIG-IP. It should look similar as the below picture, where my_generic_app has been removed.
+**Step 8:** Check the BIG-IP. It should look similar as the below picture, where my_generic_app has been removed.
 
 ![](../png/module3/task3_3_p3.png)
 
-Step 9: Remove the entire config by selecting **“Step 3.3.3: Delete AS3 declaration serviceMain and generic”** and press **‘Send’**.
+**Step 9:** Remove the entire config by selecting **“Step 3.3.3: Delete AS3 declaration serviceMain and generic”** and press **‘Send’**.
 
-Step 10: Check the BIG-IP if the tenant has been removed.
+**Step 10:** Check the BIG-IP if the tenant has been removed.
 
 [PREVIOUS](task3_2.md)      [NEXT](task3_4.md)
