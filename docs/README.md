@@ -1,6 +1,5 @@
-*******************************************
-Welcome to f5-atc-workshop's documentation!
-*******************************************
+
+# Welcome to f5-atc-workshop's documentation!
 
 Use this README as your starting point into learning F5 automation toolchain. To get your environment up and running, the sections: Getting Started, Module 1 and Module 2 are mandatory. After this you can pretty much select a module or task to test, play or demo.
 
@@ -8,13 +7,12 @@ Hopefully this workshop will deliver the insights howtoo use F5 solutions being 
 
 Happy learning!!
 
-*************************************
-`Getting Started <Getting_Started>`__
-*************************************
 
+**********************************
+[Getting Started](Getting_Started)
 
 ******************************************************************
-`Module 1 - Starting the lab environment <module_1/module1>`__
+[Module 1 - Starting the lab environment](module_1/module1)
 ******************************************************************
  * `Task 1.1 - Explore and start the lab environment <module_1/module1.rst/task1_1>`__
  * `Task 1.2 - Setup Postman <module_1/module1.rst/task1_2>`__
