@@ -13,12 +13,12 @@ Hopefully this workshop will deliver the insights howtoo use F5 solutions being 
 
 Happy learning!!
 
-`Getting Started <docs/Getting Started.rst>`__
+`Getting Started <../docs/Getting Started.rst>`__
 **********************************************
 
 `Module 1 - Starting the lab environment <docs/module_1/module.rst>`__
 **********************************************************************
- * `Task 1.1 Explore and start the lab environment <docs/module_1/module1.rst/task1_1.rst>`__
+ * `Task 1.1 - Explore and start the lab environment <docs/module_1/module1.rst/task1_1.rst>`__
  * `Task 1.2 - Setup Postman <docs/module_1/module1.rst/task1_2.rst>`__
  * `Task 1.3 - Authentication Tokens <docs/module_1/module1.rst/task1_2.rst>`__
 
