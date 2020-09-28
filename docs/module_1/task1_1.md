@@ -6,7 +6,8 @@
 
     
 **Step 2:** In the Remote Desktop Connection popup select **‘Connect’**. Ignore the warning that the identity could not be verified and click **‘Yes’**.
-Step 3: Login to Ubuntu with ``f5student/f5student123``.
+
+**Step 3:** Login to Ubuntu with ``f5student/f5student123``.
 
 ![](../png/module1/task1_1_p2.png)
 
@@ -43,7 +44,7 @@ The folder contains all the files to fire up the infrastructure in Azure public 
 This lab does not contain a deep dive into Terraform since this is out of scope for the purpose of this workshop. The reason for showing these files and deliver guidance to leverage Terraform for deploying the lab infrastructure comes with the idea that now one can deploy this lab everywhere, even in its own Azure environment.
 If you don’t have Terraform skills, no worries, this guide with lead you through.
 
-**Step 9:** In the terminal, be sure you are in the directory ``‘f5-atc-workshop’`` and type the following and press enter:
+**Step 9:** In the terminal, be sure you are in the directory ``f5-atc-workshop`` and type the following and press enter:
 
 **cp setup_changeme.yml setup.yml**
 
@@ -55,7 +56,7 @@ If you don’t have Terraform skills, no worries, this guide with lead you throu
  
 ![](../png/module1/task1_1_p10.png)
 
-**Step 12:** As a result, you should see that everywhere the label **<student_number>** is replaced by **‘<your_assigned_student_number’**. This counts for the student_number, and all B-octets of defined IP ranges and IP host addresses.
+**Step 12:** As a result, you should see that everywhere the label **<student_number>** is replaced by **‘<your_assigned_student_number>’**. This counts for the student_number, and all B-octets of defined IP ranges and IP host addresses.
 
 **Step 13:** Close the search and replace window and save the changes by pressing **‘Ctrl+S’**. Not saving the changes will make terraform fail!
 

@@ -3,7 +3,11 @@
 
 
 The BIG-IP has gone through the bootstrap phase and is up and running by leveraging Terraform.
-Included in the bootstrap phase are the installation of the F5 ATC packages for DO, AS3, TS and FAST.
+Included in the bootstrap phase are the installation of the F5 ATC packages for:
+- Declarative Onboarding - DO,
+- Application Services 3 Extention - AS3, 
+- Telemetry Streaming - TS,
+- F5 Application Services Tempolate - FAST.
 
 With just finishing the bootstrap phase, the BIG-IP is still not aware of its environment. This is where the onboarding becomes essential 
 
