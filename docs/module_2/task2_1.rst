@@ -133,7 +133,7 @@ Step 7: For Onboarding BIGIP2, repeat steps 5 and 6, but use the respected Postm
 The DO JSON schema for BIGIP-2 is included in the mentioned steps, but can be found and checked below for your reference.
 
 .. code-block:: json
-
+   
  {
     "schemaVersion": "1.2.0",
     "class": "Device",
