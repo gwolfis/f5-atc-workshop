@@ -1,8 +1,3 @@
-.. f5-atc-workshop documentation master file, created by
-   sphinx-quickstart on Thu Sep 24 11:39:04 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 *******************************************
 Welcome to f5-atc-workshop's documentation!
 *******************************************
@@ -13,18 +8,20 @@ Hopefully this workshop will deliver the insights howtoo use F5 solutions being 
 
 Happy learning!!
 
-`Getting Started <../Getting Started.rst>`__
-**********************************************
+*************************************
+`Getting Started <Getting_Started>`__
+*************************************
 
-`Module 1 - Starting the lab environment <module_1/module.rst>`__
-**********************************************************************
- * `Task 1.1 - Explore and start the lab environment <module_1/module1.rst/task1_1.rst>`__
- * `Task 1.2 - Setup Postman <module_1/module1.rst/task1_2.rst>`__
- * `Task 1.3 - Authentication Tokens <module_1/module1.rst/task1_2.rst>`__
 
-`Module 2 - Decalarative Onboarding (DO) <module_2/module2.rst>`__
+******************************************************************
+`Module 1 - Starting the lab environment <module_1/module1>`__
+******************************************************************
+ * `Task 1.1 - Explore and start the lab environment <module_1/module1.rst/task1_1>`__
+ * `Task 1.2 - Setup Postman <module_1/module1.rst/task1_2>`__
+ * `Task 1.3 - Authentication Tokens <module_1/module1.rst/task1_2>`__
+
+`Module 2 - Decalarative Onboarding (DO) <module_2/module2>`__
 ***********************************************************************
-
  * `Task 2.1 – Deploy Onboarding <module_2/task2_1.rst>`__
 
 `Module 3 - Application Services 3 Extension (AS3) <module_3/module3.rst>`__
@@ -47,3 +44,4 @@ Happy learning!!
  * `Task 5.1 - Azure Sentinel and TS <module_5/task5_1.rst>`__
  * `Task 5.2 - Include WAF via an AS3 declaration <module_5/task5_2.rst>`__
  * `Task 5.3 - Azure Sentinel <module_5/task5_3.rst>`__
+
