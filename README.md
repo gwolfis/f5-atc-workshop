@@ -14,9 +14,11 @@ Happy learning!!
 
 **[Module 1 - Starting the lab environment](docs/module_1/module1.rst)**
 
- * **[Task 1.1 - Explore and start the lab environment](docs/module_1/module1.rst/task1_1.rst)**
- * **[Task 1.2 - Setup Postman](docs/module_1/module1.rst/task1_2.rst)**
- * **[Task 1.3 - Authentication Tokens](docs/module_1/module1.rst/task1_2.rst)**
+**[Task 1.1 - Explore and start the lab environment](docs/module_1/module1.rst/task1_1.rst)**
+
+**[Task 1.2 - Setup Postman](docs/module_1/module1.rst/task1_2.rst)**
+
+**[Task 1.3 - Authentication Tokens](docs/module_1/module1.rst/task1_2.rst)**
 
 **[Module 2 - Decalarative Onboarding (DO)](docs/module_2/module2.rst)**
 
