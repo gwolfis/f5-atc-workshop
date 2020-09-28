@@ -12,4 +12,4 @@ This module will cover:
 -	Make Postman ready to be used
 -	Create authentication token
 
-    `NEXT <task1_1.rst>`__
+    `PREVIOUS <../Getting Started.rst>`__ `NEXT <task1_1.rst>`__
