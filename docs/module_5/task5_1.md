@@ -95,6 +95,7 @@ Step 14: Go to **Security > Event Logs > Logging Profiles** and select **telemet
 **(Optional)**
 
 Go to **System > Logs > Configuration > Log Destinations** and checkout **‘telemetry_formatted’** and **‘telemetry_hsl’**.
+
 Finally go to **System > Logs > Configuration > telemetry_publisher** and checkout **telemetry_publisher**.
 
 [PREVIOUS](module5.md)      [NEXT](task5_2.md)

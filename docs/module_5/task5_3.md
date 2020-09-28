@@ -29,4 +29,4 @@ Voila, your F5 BIG-IP ASM integration in Azure Sentinel is finished.
 
 Step 8: (Optional) repeat creating more logging by hitting the DVWA server with more traffic to see more dashboard movement.
 
-You reached the end of this lab guide, go back to the [README](../../README.md)
+**You reached the end of this lab guide, go back to the [README](../../README.md)**

@@ -294,6 +294,6 @@ Step 11: Once you are convinced that GSLB works and actually has been configured
 
 Step 12: Delete the configuration of the BIG-IP app services by using Postman step 3.4.5 and 3.4.6.
 
-[PREVIOUS](task3_3.md)      [NEXT](../module_4/module.md)
+[PREVIOUS](task3_3.md)      [NEXT](../module_4/module4.md)
 
 or go back to the [README](../../README.md)

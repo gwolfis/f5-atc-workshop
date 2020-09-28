@@ -12,9 +12,7 @@ Step 3: Login to Ubuntu with ``f5student/f5student123``.
 
 Step 4: Ignore any authentication pop-up by pressing **Cancel**.
 
-Step 5: At the desktop, select **‘Activities’** in the upper left corner and select 
-
-![](../png/module1/task1_1_p3.png)
+Step 5: At the desktop, select **‘Activities’** in the upper left corner and select ![](../png/module1/task1_1_p3.png)
 
 from the menu on the left. This will start Visual Studio Code.
 
@@ -32,9 +30,7 @@ This grabs the files we will going to use for the lab from Github and places the
 
 ![](../png/module1/task1_1_p5.png)
 
-Step 8: Let’s open the folder in VSC, by selecting 
-
-![](../png/module1/task1_1_p6.png)
+Step 8: Let’s open the folder in VSC, by selecting ![](../png/module1/task1_1_p6.png)
 
 in the left pane and in the Home directory select **‘f5-atc-workshop’** and click **‘OK’**.
 
@@ -83,4 +79,4 @@ When all is deployed, you should see this output.
 
 Step 18: Use your Azure credentials to open the Azure portal and select your resource group referenced by your student number. You should see all the deployed infrastructure objects.
 
-[PREVIOUS](module1.md).md)      [NEXT](task1_2.md)
+[PREVIOUS](module1.md)      [NEXT](task1_2.md)
