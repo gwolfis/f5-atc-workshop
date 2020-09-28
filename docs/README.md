@@ -9,7 +9,7 @@ Happy learning!!
 
 
 **********************************
-[Getting Started](Getting_Started)
+[Getting Started](Getting_Started.rst)
 
 ******************************************************************
 [Module 1 - Starting the lab environment](module_1/module1)
