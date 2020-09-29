@@ -12,7 +12,7 @@ After this you can pretty much select a module or task to test, play or demo.
 
 This workshop will deliver the insights howtoo use F5 solutions being automated and add F5 application services to your automated apps.
 
-This workshop is a living document and over time new exercises will get added. Be sure to get back to see what was added.
+This workshop will get updated with new exercises over time and be sure to get back to see what was added.
 
 Happy learning!!
 
