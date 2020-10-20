@@ -25,8 +25,13 @@ When you don't have access to UDF, please align to the mentioned per-requisites:
  * Having an Azure account.
  * Pre-configure a resource group.
  * Define a location within your pre-defined resource group.
+ * Create a setup.yml from the setup_change.yml.
 
 In the setup_changeme.yml the resource group and location are hardcoded and should be adjusted accordingly.
+
+## How things work (both UDF and non-UDF)
+Soon as you created the setup.yml you can start the environment by using Terraform commands. The "Getting Started" section and "Module 1" guide you through.
+When Terraform starts deploying the infrastructure as shown in the network diagram, all dynamic allocated IP addresses and nesecarry values from Azure will get collected in "F5_ATC_EMEA_Partner_Workshop_postman_environment.json" which can be found in /postman after Terraform has finished the deployement. Some of those values are also published as output in Terraform.
 
 ![](png/getting_started/network_diagram.png)
 
