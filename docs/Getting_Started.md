@@ -30,8 +30,15 @@ When you don't have access to UDF, please align to the mentioned per-requisites:
 In the setup_changeme.yml the resource group and location are hardcoded and should be adjusted accordingly. Use the 'student_number' section to create the B-octet of your CIDR and subnets as described in module 1.
 
 ## How things work (both UDF and non-UDF)
-Soon as you created the setup.yml you can start the environment by using Terraform commands. The "Getting Started" section and "Module 1" guide you through.
-When Terraform starts deploying the infrastructure as shown in the network diagram, all dynamic allocated IP addresses and nesecarry values from Azure will get collected in "F5_ATC_EMEA_Partner_Workshop_postman_environment.json" which can be found in /postman after Terraform has finished the deployement. Some of those values are also published as output in Terraform.
+The lab starts with cloning the Github repo and after this you need to create the setup.yml before the environment can be started through Terraform. The "Getting Started" section and "Module 1" guide you through.
+When Terraform starts deploying the infrastructure as shown in the network diagram, all dynamic allocated IP addresses and nesecarry values from Azure will get collected in "F5_ATC_EMEA_Partner_Workshop_postman_environment.json" which can be found in the directory /postman after Terraform has finished the deployement. Some of those values are also published as output in Terraform which can be used later on as a reference.
+
+The deployed infrastructure consists out of:
+ * Two separate BIG-IPs
+ * Two webservers
+ * One DVWA-server
+
+All written exercises will be using F5 automation toolchain and it is expected that you will use Postman to deploy and explore. Only the first FAST labs will ask you to use the BIG-IP GUI, but this is on purpose.
 
 ![](png/getting_started/network_diagram.png)
 
