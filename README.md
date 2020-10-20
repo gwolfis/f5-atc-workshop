@@ -1,7 +1,7 @@
 
 # Welcome to f5-atc-workshop's documentation!
 
-Use this README as your starting point into learning F5 automation toolchain, to get your environment up and running. During this workshop you will use a pre-defined infrastructire which will get automatically deployed via Terrafrom in Azure. The entire solution, including the exercises can be pulled from this Github repository and cloned into a personal environment. This workshop can run with and without UDF.
+Use this README as your starting point into learning F5 automation toolchain, to get your environment up and running. During this workshop you will use a pre-defined infrastructure which will get automatically deployed via Terrafrom in Azure. The entire solution, including the exercises can be pulled from this Github repository and cloned into a personal environment. This workshop can run with and without UDF.
 
 The following sections are mandatory: 
 - Getting Started - To understand the lab environment.
