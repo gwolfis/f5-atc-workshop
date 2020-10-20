@@ -27,7 +27,7 @@ When you don't have access to UDF, please align to the mentioned per-requisites:
  * Define a location within your pre-defined resource group.
  * Create a setup.yml from the setup_change.yml.
 
-In the setup_changeme.yml the resource group and location are hardcoded and should be adjusted accordingly.
+In the setup_changeme.yml the resource group and location are hardcoded and should be adjusted accordingly. Use the 'student_number' section to create the B-octet of your CIDR and subnets as described in module 1.
 
 ## How things work (both UDF and non-UDF)
 Soon as you created the setup.yml you can start the environment by using Terraform commands. The "Getting Started" section and "Module 1" guide you through.
