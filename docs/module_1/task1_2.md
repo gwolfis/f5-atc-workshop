@@ -32,6 +32,22 @@ In Postman select **‘Collections’** and open **“F5 ATC -EMEA Partner Works
 
 **Step 7:** Use the ‘eye’ icon ![](../png/module1/task1_2_p6.png)  to watch the configured variables.
 
+
+**Step 8:** Postman is almost ready there is one one final step to make and this is to import F5 workflow functions from Github. In Postman, open **Import** but this time **from link**. Copy and paste the following link: https://raw.githubusercontent.com/0xHiteshPatel/f5-postman-workflows/master/F5_Postman_Workflows.postman_collection.json and click **Continue** and **Import**.
+
+![](../png/module1/task1_2_p7.png)
+
+
+**Step 9:** Navigate to **Postman > Collections** and select the section **F5_Postman_Workflows** and click **Instal**.
+
+![](../png/module1/task1_2_p8.png)
+
+**Step 10:** Select **Install/Upgrade f5-postman-workflows** and hit **Send** next to the URL.
+
+**Step 11:** Verify the the install was succesfull by checking the Postman environment and the global section should have _f5_workflow_functions deployed.
+
+![](../png/module1/task1_2_p9.png)
+
 Postman is ready to be used within our lab.
 
 [PREVIOUS](task1_1.md) [NEXT](task1_3.md)

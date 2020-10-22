@@ -80,4 +80,4 @@ When all is deployed, you should see this output.
 
 **Step 18:** Use your Azure credentials to open the Azure portal and select your resource group referenced by your student number. You should see all the deployed infrastructure objects.
 
-[PREVIOUS](module1.md)      [NEXT](task1_2.md)
+[PREVIOUS](task1_0.md)      [NEXT](task1_2.md)

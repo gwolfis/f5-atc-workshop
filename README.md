@@ -1,6 +1,8 @@
 
 # Welcome to f5-atc-workshop's documentation!
 
+**This is a community based project As such, F5 does not provide any offical support for this project**
+
 Use this README as your starting point into learning F5 automation toolchain, to get your environment up and running. During this workshop you will use a pre-defined infrastructure which will get automatically deployed via Terrafrom in Azure. The entire solution, including the exercises can be pulled from this Github repository and cloned into a personal environment. This workshop can run with and without UDF.
 
 The following sections are mandatory: 
@@ -12,9 +14,12 @@ After this you can pretty much select a module or task to test, play or demo.
 
 This workshop will deliver the insights howtoo use F5 solutions being automated and add F5 application services to your automated apps.
 
+When you find an issue during the usage of this lab, please file an issue **[here](https://github.com/gwolfis/f5-atc-workshop/issues)**. Solving issues will be done on best effort.
+
 This workshop will get updated with new exercises over time and be sure to get back to see what was added.
 
 Happy learning!!
+
 
 **********************************
 ## Table of Contents
@@ -24,6 +29,7 @@ Happy learning!!
 
 **[Module 1 - Starting the lab environment](docs/module_1/module1.md)**
 
+ * **[Task 1.0 - Using the LAB without using an F5 UDF lab environment](docs/module_1/task1_0.md)**
  * **[Task 1.1 - Explore and start the lab environment](docs/module_1/task1_1.md)**
  * **[Task 1.2 - Setup Postman](docs/module_1/task1_2.md)**
  * **[Task 1.3 - Authentication Tokens](docs/module_1/task1_2.md)**
