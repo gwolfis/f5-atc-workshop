@@ -23,13 +23,20 @@ from the menu on the left. This will start Visual Studio Code.
 
 This will open a Terminal window in the lower section of VSC.
 
-**Step 7:** In this terminal, which is bash based type: 
+**Step 7:** In this terminal, which is bash based type:
 
 **git clone https://github.com/gwolfis/f5-atc-workshop.git**
 
 This grabs the files we will going to use for the lab from Github and places them on the Jumphost.
 
 ![](../png/module1/task1_1_p5.png)
+
+```
+Note for F5-ers:
+At this point refresh the Azure credentials which can be found at /file/tmp.yml. When you don't know how to setup an Azure AD app registration and assign a role to it, please check the section 'Task1_0'.
+
+Non-F5 but invited students using UDF should not worry, this is arranged for you.
+```
 
 **Step 8:** Let’s open the folder in VSC, by selecting ![](../png/module1/task1_1_p6.png)
 

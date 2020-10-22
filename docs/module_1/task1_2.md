@@ -33,7 +33,13 @@ In Postman select **‘Collections’** and open **“F5 ATC -EMEA Partner Works
 **Step 7:** Use the ‘eye’ icon ![](../png/module1/task1_2_p6.png)  to watch the configured variables.
 
 
-**Step 8:** Postman is almost ready there is one one final step to make and this is to import F5 workflow functions from Github. In Postman, open **Import** but this time **from link**. Copy and paste the following link: https://raw.githubusercontent.com/0xHiteshPatel/f5-postman-workflows/master/F5_Postman_Workflows.postman_collection.json and click **Continue** and **Import**.
+**Step 8:** Postman is almost ready there is one one final step to make and this is to import F5 workflow functions from Github. In Postman, open **Import** but this time **from link**. 
+
+Copy and paste the following link and click **Continue** and **Import**.
+
+```
+https://raw.githubusercontent.com/0xHiteshPatel/f5-postman-workflows/master/F5_Postman_Workflows.postman_collection.json
+```
 
 ![](../png/module1/task1_2_p7.png)
 
