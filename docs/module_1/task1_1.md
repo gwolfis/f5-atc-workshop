@@ -1,4 +1,9 @@
-# Task 1.1 Explore and start the lab environment
+# Task 1.1 Explore and start the lab environment for UDF users
+
+
+**Note:**
+*Non-UDF users can skip this section ans go straight to task1.2 which is about peparing Postman*
+
 
 **Step 1:** From UDF, start an RDP session to the Jumphost. For modern laptops it might be a suggestion to use the 1440x900 resolution to keep things readable in the remote session.
 

@@ -120,8 +120,31 @@ In that case, from your home directory: **git clone https://github.com/gwolfis/f
 
 ![](../png/module1/task1_0_p6.png)
 
+**Step 5:** Close the search and replace window and save the changes by pressing **‘Ctrl+S’**. Not saving the changes will make terraform fail!
+
+**Step 6:** In the terminal we first need to navigate to the right directory: **cd f5-atc-workshop**
+
+**Step 7:** In the terminal type: **terraform init**
+ 
+![](../png/module1/task1_1_p11.png)
+
+You should see this output.
+
+**Step 8:** Next, type: **terraform plan**
+
+**Step 9:** Finally type: **terraform apply -auto-approve**
+
+Terraform will take about ~5min to deploy the infrastructure. Time for coffee!
+
+![](../png/module1/task1_1_p12.png)
+
+When all is deployed, you should see this output.
+
+**Step 10:** Use your Azure credentials to open the Azure portal and select your resource group referenced by your student number. You should see all the deployed infrastructure objects.
+
 This finalizes the pre-work which needs to be done for non-UDF lab users.
 
-You can continue the lab at task1_1 step 13 which can reach by hitting the **NEXT** button.
+Selecting 'NEXT' will get you in Task1.2 which is about preparing Postman. Task1.1 will be skipped, since this explains UDF users how to prepare the Jumphost.
 
-[PREVIOUS](module1.md)      [NEXT](task1_1.md)
+
+[PREVIOUS](module1.md)      [NEXT](task1_2.md)
